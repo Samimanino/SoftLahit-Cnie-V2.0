@@ -85,12 +85,6 @@
 
     End Sub
 
-    Private Sub frm_Profesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FuncBarrio.Mostrar_Barrio()
-        ' dgv_Principal.Columns("ID").Visible = False
-
-    End Sub
-
     Private Sub dgv_Principal_DoubleClick(sender As Object, e As EventArgs) Handles dgv_Principal.DoubleClick
         Me.lbl_ID.Text = Me.dgv_Principal.CurrentRow.Cells("ID").Value.ToString
         Me.txt_nombre.Text = Me.dgv_Principal.CurrentRow.Cells("Nombre").Value.ToString
@@ -104,5 +98,9 @@
     Private Sub frm_Barrio_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         FuncBarrio.Mostrar_cmb_Barrio()
         Me.Dispose()
+    End Sub
+
+    Private Sub frm_barrio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FuncBarrio.Mostrar_Barrio()
     End Sub
 End Class

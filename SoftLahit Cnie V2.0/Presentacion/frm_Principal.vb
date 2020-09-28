@@ -7,6 +7,7 @@
     Private FuncNacionalidad As New FuncNacionalidad
     Private FuncBarrio As New FuncBarrio
     Private FuncCiudad As New FuncCiudad
+    Private FuncLugarNacimiento As New FuncLugarNacimiento
 
     Private TipoGenero As String
     Private Status_social As String
@@ -33,6 +34,7 @@
     End Sub
 
     Private Sub dgv_buscar_DoubleClick(sender As Object, e As EventArgs) Handles dgv_buscar.DoubleClick
+
         Try
             Dim valor As Integer
             valor = Me.dgv_buscar.CurrentRow.Cells(0).Value()
@@ -83,12 +85,8 @@
         txt_passaporte.Clear()
         txt_permis.Clear()
 
-
-
-
-
-
     End Sub
+
     Private Sub LimpiarCMB()
         cmb_barrio.Items.Clear()
         Cmb_Ciudad.Items.Clear()
@@ -266,6 +264,7 @@
         FuncBarrio.Mostrar_cmb_Barrio()
         FuncCiudad.Mostrar_cmb_Ciudad()
         FuncProfesion.Mostrar_cmb_Profesion()
+        FuncLugarNacimiento.Mostrar_cmb_LugarNacimiento()
 
 
     End Sub
@@ -312,6 +311,19 @@
 
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         frm_LugarNacimiento.ShowDialog()
+    End Sub
+
+    Private Sub dtp_fecha_nacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtp_fecha_nacimiento.ValueChanged
+        Try
+            Dim date1 As Date = CDate(Me.dtp_fecha_nacimiento.Value)
+            Dim date2 As Date = Today
+
+            Me.lbl_total_edad.Text = "Edad es:" & CStr(date2.Year - date1.Year) & " Años."
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        End Try
+
     End Sub
 
 End Class

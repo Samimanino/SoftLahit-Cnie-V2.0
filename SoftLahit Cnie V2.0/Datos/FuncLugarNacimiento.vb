@@ -83,7 +83,7 @@ Public Class FuncLugarNacimiento
     Public Function Mostrar_cmb_LugarNacimiento()
         Try
 
-            frm_Principal.Cmb_Ciudad.Items.Clear()
+            frm_Principal.cmb_lugarNacimiento.Items.Clear()
 
             Conectar()
             With cmd

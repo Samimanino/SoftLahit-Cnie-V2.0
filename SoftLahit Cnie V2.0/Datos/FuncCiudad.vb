@@ -82,7 +82,7 @@ Public Class FuncCiudad
 
     Public Function Mostrar_cmb_Ciudad()
         Try
-            frm_Principal.cmb_Profession.Items.Clear()
+            frm_Principal.Cmb_Ciudad.Items.Clear()
 
             Conectar()
             With cmd

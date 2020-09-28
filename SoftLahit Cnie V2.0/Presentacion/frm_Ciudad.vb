@@ -83,11 +83,7 @@
 
     End Sub
 
-    Private Sub frm_Profesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FuncCiudad.Mostrar_Ciudad()
-        ' dgv_Principal.Columns("ID").Visible = False
 
-    End Sub
 
     Private Sub dgv_Principal_DoubleClick(sender As Object, e As EventArgs) Handles dgv_Principal.DoubleClick
         Me.lbl_ID.Text = Me.dgv_Principal.CurrentRow.Cells("ID").Value.ToString
@@ -102,5 +98,9 @@
     Private Sub frm_Ciudad_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         FuncCiudad.Mostrar_cmb_Ciudad()
         Me.Dispose()
+    End Sub
+
+    Private Sub frm_Ciudad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FuncCiudad.Mostrar_Ciudad()
     End Sub
 End Class

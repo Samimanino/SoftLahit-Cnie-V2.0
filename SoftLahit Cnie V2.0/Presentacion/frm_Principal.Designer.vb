@@ -38,6 +38,8 @@ Partial Class frm_Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_bu_Nombre = New System.Windows.Forms.TextBox()
         Me.Panel_Formulario = New System.Windows.Forms.Panel()
+        Me.lbl_total_edad = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.dtp_fecha_nacimiento = New System.Windows.Forms.DateTimePicker()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -89,10 +91,10 @@ Partial Class frm_Principal
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_Apellido = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Panel_Buscar.SuspendLayout()
         CType(Me.dgv_buscar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Formulario.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,7 +103,6 @@ Partial Class frm_Principal
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_buscar
@@ -257,6 +258,7 @@ Partial Class frm_Principal
         '
         'Panel_Formulario
         '
+        Me.Panel_Formulario.Controls.Add(Me.lbl_total_edad)
         Me.Panel_Formulario.Controls.Add(Me.PictureBox6)
         Me.Panel_Formulario.Controls.Add(Me.dtp_fecha_nacimiento)
         Me.Panel_Formulario.Controls.Add(Me.PictureBox3)
@@ -294,16 +296,35 @@ Partial Class frm_Principal
         Me.Panel_Formulario.Controls.Add(Me.txt_nombre)
         Me.Panel_Formulario.Controls.Add(Me.Label24)
         Me.Panel_Formulario.Controls.Add(Me.txt_Apellido)
-        Me.Panel_Formulario.Location = New System.Drawing.Point(355, 93)
+        Me.Panel_Formulario.Location = New System.Drawing.Point(443, 127)
         Me.Panel_Formulario.Name = "Panel_Formulario"
-        Me.Panel_Formulario.Size = New System.Drawing.Size(767, 622)
+        Me.Panel_Formulario.Size = New System.Drawing.Size(632, 594)
         Me.Panel_Formulario.TabIndex = 11
         Me.Panel_Formulario.Visible = False
+        '
+        'lbl_total_edad
+        '
+        Me.lbl_total_edad.AutoSize = True
+        Me.lbl_total_edad.Location = New System.Drawing.Point(495, 176)
+        Me.lbl_total_edad.Name = "lbl_total_edad"
+        Me.lbl_total_edad.Size = New System.Drawing.Size(19, 13)
+        Me.lbl_total_edad.TabIndex = 215
+        Me.lbl_total_edad.Text = "00"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox6.Location = New System.Drawing.Point(464, 170)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 214
+        Me.PictureBox6.TabStop = False
         '
         'dtp_fecha_nacimiento
         '
         Me.dtp_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_nacimiento.Location = New System.Drawing.Point(200, 181)
+        Me.dtp_fecha_nacimiento.Location = New System.Drawing.Point(134, 170)
         Me.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento"
         Me.dtp_fecha_nacimiento.Size = New System.Drawing.Size(120, 20)
         Me.dtp_fecha_nacimiento.TabIndex = 213
@@ -311,7 +332,7 @@ Partial Class frm_Principal
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
-        Me.PictureBox3.Location = New System.Drawing.Point(390, 152)
+        Me.PictureBox3.Location = New System.Drawing.Point(324, 141)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(25, 22)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -321,7 +342,7 @@ Partial Class frm_Principal
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
-        Me.PictureBox2.Location = New System.Drawing.Point(327, 289)
+        Me.PictureBox2.Location = New System.Drawing.Point(261, 278)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(25, 22)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -331,7 +352,7 @@ Partial Class frm_Principal
         'pb_Validar
         '
         Me.pb_Validar.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.solicit_accept_check_ok_theaction_6340
-        Me.pb_Validar.Location = New System.Drawing.Point(335, 533)
+        Me.pb_Validar.Location = New System.Drawing.Point(269, 522)
         Me.pb_Validar.Name = "pb_Validar"
         Me.pb_Validar.Size = New System.Drawing.Size(49, 45)
         Me.pb_Validar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -341,7 +362,7 @@ Partial Class frm_Principal
         'lbl_Exist
         '
         Me.lbl_Exist.AutoSize = True
-        Me.lbl_Exist.Location = New System.Drawing.Point(610, 445)
+        Me.lbl_Exist.Location = New System.Drawing.Point(544, 434)
         Me.lbl_Exist.Name = "lbl_Exist"
         Me.lbl_Exist.Size = New System.Drawing.Size(25, 13)
         Me.lbl_Exist.TabIndex = 209
@@ -351,7 +372,7 @@ Partial Class frm_Principal
         '
         Me.cmb_nacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_nacionalidad.FormattingEnabled = True
-        Me.cmb_nacionalidad.Location = New System.Drawing.Point(200, 153)
+        Me.cmb_nacionalidad.Location = New System.Drawing.Point(134, 142)
         Me.cmb_nacionalidad.Name = "cmb_nacionalidad"
         Me.cmb_nacionalidad.Size = New System.Drawing.Size(184, 21)
         Me.cmb_nacionalidad.TabIndex = 178
@@ -363,7 +384,7 @@ Partial Class frm_Principal
         Me.GroupBox1.Controls.Add(Me.rb_divorciado)
         Me.GroupBox1.Controls.Add(Me.rb_casado)
         Me.GroupBox1.Controls.Add(Me.rb_soltero)
-        Me.GroupBox1.Location = New System.Drawing.Point(199, 254)
+        Me.GroupBox1.Location = New System.Drawing.Point(133, 243)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(461, 31)
         Me.GroupBox1.TabIndex = 183
@@ -414,7 +435,7 @@ Partial Class frm_Principal
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(569, 185)
+        Me.Label18.Location = New System.Drawing.Point(387, 125)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(29, 13)
         Me.Label18.TabIndex = 207
@@ -424,8 +445,7 @@ Partial Class frm_Principal
         '
         Me.cmb_lugarNacimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_lugarNacimiento.FormattingEnabled = True
-        Me.cmb_lugarNacimiento.Items.AddRange(New Object() {"Alhoceima", "Tanger", "Ouajda", "Casa Blanca", "Rabat", "Tetuan", "Nador", "Agadir"})
-        Me.cmb_lugarNacimiento.Location = New System.Drawing.Point(374, 181)
+        Me.cmb_lugarNacimiento.Location = New System.Drawing.Point(308, 170)
         Me.cmb_lugarNacimiento.Name = "cmb_lugarNacimiento"
         Me.cmb_lugarNacimiento.Size = New System.Drawing.Size(151, 21)
         Me.cmb_lugarNacimiento.TabIndex = 180
@@ -443,7 +463,7 @@ Partial Class frm_Principal
         Me.Adresse.Controls.Add(Me.Label20)
         Me.Adresse.Controls.Add(Me.txt_num_direccion)
         Me.Adresse.Controls.Add(Me.Label19)
-        Me.Adresse.Location = New System.Drawing.Point(201, 314)
+        Me.Adresse.Location = New System.Drawing.Point(135, 303)
         Me.Adresse.Name = "Adresse"
         Me.Adresse.Size = New System.Drawing.Size(464, 122)
         Me.Adresse.TabIndex = 185
@@ -545,7 +565,7 @@ Partial Class frm_Principal
         '
         Me.cmb_Profession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_Profession.FormattingEnabled = True
-        Me.cmb_Profession.Location = New System.Drawing.Point(200, 287)
+        Me.cmb_Profession.Location = New System.Drawing.Point(134, 276)
         Me.cmb_Profession.Name = "cmb_Profession"
         Me.cmb_Profession.Size = New System.Drawing.Size(121, 21)
         Me.cmb_Profession.TabIndex = 184
@@ -554,7 +574,7 @@ Partial Class frm_Principal
         'rb_Genero_m
         '
         Me.rb_Genero_m.AutoSize = True
-        Me.rb_Genero_m.Location = New System.Drawing.Point(296, 130)
+        Me.rb_Genero_m.Location = New System.Drawing.Point(230, 119)
         Me.rb_Genero_m.Name = "rb_Genero_m"
         Me.rb_Genero_m.Size = New System.Drawing.Size(71, 17)
         Me.rb_Genero_m.TabIndex = 205
@@ -566,7 +586,7 @@ Partial Class frm_Principal
         '
         Me.rb_Genero_h.AutoSize = True
         Me.rb_Genero_h.Checked = True
-        Me.rb_Genero_h.Location = New System.Drawing.Point(200, 130)
+        Me.rb_Genero_h.Location = New System.Drawing.Point(134, 119)
         Me.rb_Genero_h.Name = "rb_Genero_h"
         Me.rb_Genero_h.Size = New System.Drawing.Size(73, 17)
         Me.rb_Genero_h.TabIndex = 177
@@ -577,7 +597,7 @@ Partial Class frm_Principal
         'lbl_id
         '
         Me.lbl_id.AutoSize = True
-        Me.lbl_id.Location = New System.Drawing.Point(198, 50)
+        Me.lbl_id.Location = New System.Drawing.Point(132, 39)
         Me.lbl_id.Name = "lbl_id"
         Me.lbl_id.Size = New System.Drawing.Size(0, 13)
         Me.lbl_id.TabIndex = 204
@@ -585,7 +605,7 @@ Partial Class frm_Principal
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(123, 50)
+        Me.Label16.Location = New System.Drawing.Point(57, 39)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(54, 13)
         Me.Label16.TabIndex = 203
@@ -594,7 +614,7 @@ Partial Class frm_Principal
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(80, 497)
+        Me.Label13.Location = New System.Drawing.Point(14, 486)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(97, 13)
         Me.Label13.TabIndex = 202
@@ -602,7 +622,7 @@ Partial Class frm_Principal
         '
         'txt_permis
         '
-        Me.txt_permis.Location = New System.Drawing.Point(201, 494)
+        Me.txt_permis.Location = New System.Drawing.Point(135, 483)
         Me.txt_permis.Name = "txt_permis"
         Me.txt_permis.Size = New System.Drawing.Size(403, 20)
         Me.txt_permis.TabIndex = 188
@@ -610,7 +630,7 @@ Partial Class frm_Principal
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(116, 471)
+        Me.Label14.Location = New System.Drawing.Point(50, 460)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(61, 13)
         Me.Label14.TabIndex = 201
@@ -618,7 +638,7 @@ Partial Class frm_Principal
         '
         'txt_passaporte
         '
-        Me.txt_passaporte.Location = New System.Drawing.Point(201, 468)
+        Me.txt_passaporte.Location = New System.Drawing.Point(135, 457)
         Me.txt_passaporte.Name = "txt_passaporte"
         Me.txt_passaporte.Size = New System.Drawing.Size(403, 20)
         Me.txt_passaporte.TabIndex = 187
@@ -626,7 +646,7 @@ Partial Class frm_Principal
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(152, 445)
+        Me.Label15.Location = New System.Drawing.Point(86, 434)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(25, 13)
         Me.Label15.TabIndex = 200
@@ -634,7 +654,7 @@ Partial Class frm_Principal
         '
         'txt_cni
         '
-        Me.txt_cni.Location = New System.Drawing.Point(201, 442)
+        Me.txt_cni.Location = New System.Drawing.Point(135, 431)
         Me.txt_cni.Name = "txt_cni"
         Me.txt_cni.Size = New System.Drawing.Size(403, 20)
         Me.txt_cni.TabIndex = 186
@@ -642,7 +662,7 @@ Partial Class frm_Principal
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(120, 290)
+        Me.Label10.Location = New System.Drawing.Point(54, 279)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(56, 13)
         Me.Label10.TabIndex = 199
@@ -651,7 +671,7 @@ Partial Class frm_Principal
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(89, 264)
+        Me.Label9.Location = New System.Drawing.Point(23, 253)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(88, 13)
         Me.Label9.TabIndex = 198
@@ -660,7 +680,7 @@ Partial Class frm_Principal
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(109, 236)
+        Me.Label7.Location = New System.Drawing.Point(43, 225)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(71, 13)
         Me.Label7.TabIndex = 197
@@ -668,7 +688,7 @@ Partial Class frm_Principal
         '
         'txt_nombre_madre
         '
-        Me.txt_nombre_madre.Location = New System.Drawing.Point(200, 233)
+        Me.txt_nombre_madre.Location = New System.Drawing.Point(134, 222)
         Me.txt_nombre_madre.Name = "txt_nombre_madre"
         Me.txt_nombre_madre.Size = New System.Drawing.Size(460, 20)
         Me.txt_nombre_madre.TabIndex = 182
@@ -676,7 +696,7 @@ Partial Class frm_Principal
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(109, 210)
+        Me.Label8.Location = New System.Drawing.Point(43, 199)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 13)
         Me.Label8.TabIndex = 196
@@ -684,7 +704,7 @@ Partial Class frm_Principal
         '
         'txt_nombre_padre
         '
-        Me.txt_nombre_padre.Location = New System.Drawing.Point(200, 207)
+        Me.txt_nombre_padre.Location = New System.Drawing.Point(134, 196)
         Me.txt_nombre_padre.Name = "txt_nombre_padre"
         Me.txt_nombre_padre.Size = New System.Drawing.Size(460, 20)
         Me.txt_nombre_padre.TabIndex = 181
@@ -692,7 +712,7 @@ Partial Class frm_Principal
         'txt_total_anios
         '
         Me.txt_total_anios.Enabled = False
-        Me.txt_total_anios.Location = New System.Drawing.Point(608, 181)
+        Me.txt_total_anios.Location = New System.Drawing.Point(426, 121)
         Me.txt_total_anios.Name = "txt_total_anios"
         Me.txt_total_anios.Size = New System.Drawing.Size(51, 20)
         Me.txt_total_anios.TabIndex = 195
@@ -700,7 +720,7 @@ Partial Class frm_Principal
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(337, 184)
+        Me.Label6.Location = New System.Drawing.Point(271, 173)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(14, 13)
         Me.Label6.TabIndex = 194
@@ -709,7 +729,7 @@ Partial Class frm_Principal
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(78, 184)
+        Me.Label17.Location = New System.Drawing.Point(12, 173)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(98, 13)
         Me.Label17.TabIndex = 193
@@ -718,7 +738,7 @@ Partial Class frm_Principal
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(119, 158)
+        Me.Label21.Location = New System.Drawing.Point(53, 147)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(57, 13)
         Me.Label21.TabIndex = 192
@@ -727,7 +747,7 @@ Partial Class frm_Principal
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(145, 132)
+        Me.Label22.Location = New System.Drawing.Point(79, 121)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(31, 13)
         Me.Label22.TabIndex = 191
@@ -736,7 +756,7 @@ Partial Class frm_Principal
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(148, 107)
+        Me.Label23.Location = New System.Drawing.Point(82, 96)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(29, 13)
         Me.Label23.TabIndex = 190
@@ -744,7 +764,7 @@ Partial Class frm_Principal
         '
         'txt_nombre
         '
-        Me.txt_nombre.Location = New System.Drawing.Point(201, 78)
+        Me.txt_nombre.Location = New System.Drawing.Point(135, 67)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(460, 20)
         Me.txt_nombre.TabIndex = 175
@@ -752,7 +772,7 @@ Partial Class frm_Principal
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(133, 81)
+        Me.Label24.Location = New System.Drawing.Point(67, 70)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(43, 13)
         Me.Label24.TabIndex = 189
@@ -760,7 +780,7 @@ Partial Class frm_Principal
         '
         'txt_Apellido
         '
-        Me.txt_Apellido.Location = New System.Drawing.Point(201, 104)
+        Me.txt_Apellido.Location = New System.Drawing.Point(135, 93)
         Me.txt_Apellido.Name = "txt_Apellido"
         Me.txt_Apellido.Size = New System.Drawing.Size(460, 20)
         Me.txt_Apellido.TabIndex = 176
@@ -778,16 +798,6 @@ Partial Class frm_Principal
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
-        Me.PictureBox6.Location = New System.Drawing.Point(530, 181)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(25, 22)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 214
-        Me.PictureBox6.TabStop = False
-        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -800,6 +810,8 @@ Partial Class frm_Principal
         Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_Principal"
         Me.Text = "الشرطة المغربية"
         Me.Panel_Buscar.ResumeLayout(False)
@@ -807,6 +819,7 @@ Partial Class frm_Principal
         CType(Me.dgv_buscar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Formulario.ResumeLayout(False)
         Me.Panel_Formulario.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -817,7 +830,6 @@ Partial Class frm_Principal
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -889,4 +901,5 @@ Partial Class frm_Principal
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents dtp_fecha_nacimiento As DateTimePicker
     Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents lbl_total_edad As Label
 End Class

@@ -83,7 +83,7 @@ Public Class FuncBarrio
     Public Function Mostrar_cmb_Barrio()
         Try
 
-            frm_Principal.Cmb_Ciudad.Items.Clear()
+            frm_Principal.cmb_barrio.Items.Clear()
 
             Conectar()
             With cmd

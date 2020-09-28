@@ -6,7 +6,7 @@
     Private Sub pb_Validar_Click(sender As Object, e As EventArgs) Handles pb_Validar.Click
 
 
-        If txt_nombre.Text <> "" Then
+        If txt_nombre.Text = "" Then
             MsgBox("Nombre No Puede ser Null ")
             txt_nombre.Focus()
             txt_nombre.BackColor = Color.Red
