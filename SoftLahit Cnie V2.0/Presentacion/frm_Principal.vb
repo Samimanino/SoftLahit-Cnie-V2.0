@@ -3,6 +3,11 @@
     Private funcCliente As New FuncCliente
     Private tablaCliente As New Tabla_Cliente
 
+    Private FuncProfesion As New FuncProfesion
+    Private FuncNacionalidad As New FuncNacionalidad
+    Private FuncBarrio As New FuncBarrio
+    Private FuncCiudad As New FuncCiudad
+
     Private TipoGenero As String
     Private Status_social As String
 
@@ -41,21 +46,18 @@
         End Try
     End Sub
 
-
-
-
     Private Sub btn_Nuevo_Cliente_Click(sender As Object, e As EventArgs) Handles btn_Nuevo_Cliente.Click
         Limpiar()
 
         Panel_Formulario.Visible = True
         Panel_Buscar.Visible = False
     End Sub
+
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Limpiar()
         Panel_Formulario.Visible = False
         Panel_Buscar.Visible = True
     End Sub
-
 
     Private Sub Limpiar()
         lbl_id.Text = ""
@@ -65,9 +67,7 @@
         rb_Genero_h.Checked = False
         rb_Genero_m.Checked = False
 
-        cmb_nacionalidad.Items.Clear()
         dtp_fecha_nacimiento.Value = Today
-        cmb_lugarNacimiento.Items.Clear()
         txt_nombre_padre.Clear()
         txt_nombre_madre.Clear()
 
@@ -76,14 +76,25 @@
         rb_divorciado.Checked = False
         rb_viudo.Checked = False
 
-        cmb_Profession.Items.Clear()
         txt_num_direccion.Clear()
         txt_nombre_calle.Clear()
-        cmb_bario.Items.Clear()
-        Cmb_Ciudad.Items.Clear()
+
         txt_cni.Clear()
         txt_passaporte.Clear()
         txt_permis.Clear()
+
+
+
+
+
+
+    End Sub
+    Private Sub LimpiarCMB()
+        cmb_barrio.Items.Clear()
+        Cmb_Ciudad.Items.Clear()
+        cmb_lugarNacimiento.Items.Clear()
+        cmb_nacionalidad.Items.Clear()
+        cmb_Profession.Items.Clear()
 
     End Sub
 
@@ -122,9 +133,13 @@
 
                 tablaCliente._Estado_civil = Status_social
                 tablaCliente._Profession = cmb_Profession.Text
-                tablaCliente._Numero_direccion = txt_num_direccion.Text
+
+                If txt_num_direccion.Text <> "" Then
+                    tablaCliente._Numero_direccion = txt_num_direccion.Text
+                End If
+
                 tablaCliente._Nombre_calle = txt_nombre_calle.Text
-                tablaCliente._Bario = cmb_bario.Text
+                tablaCliente._Bario = cmb_barrio.Text
                 tablaCliente._Ciudad = Cmb_Ciudad.Text
                 tablaCliente._Cnie = txt_cni.Text
                 tablaCliente._Num_passaporte = txt_passaporte.Text
@@ -145,8 +160,8 @@
                     Limpiar()
                     Panel_Buscar.Visible = True
                     Panel_Formulario.Visible = False
-
-
+                    LimpiarCMB()
+                    LimpiarBuscar()
                 Else
                     MessageBox.Show("Producto no fue registrado intente de nuevo", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -189,7 +204,7 @@
                 tablaCliente._Profession = cmb_Profession.Text
                 tablaCliente._Numero_direccion = txt_num_direccion.Text
                 tablaCliente._Nombre_calle = txt_nombre_calle.Text
-                tablaCliente._Bario = cmb_bario.Text
+                tablaCliente._Bario = cmb_barrio.Text
                 tablaCliente._Ciudad = Cmb_Ciudad.Text
                 tablaCliente._Cnie = txt_cni.Text
                 tablaCliente._Num_passaporte = txt_passaporte.Text
@@ -209,6 +224,8 @@
                 If funcCliente.Editar_cliente(tablaCliente) Then
                     MessageBox.Show("Se ha modificado correctamnete", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    LimpiarBuscar()
+                    LimpiarCMB()
                     Panel_Buscar.Visible = True
                     Panel_Formulario.Visible = False
                 Else
@@ -225,4 +242,76 @@
 
 
     End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        frm_Profesion.ShowDialog()
+    End Sub
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        frm_Nacionalidad.ShowDialog()
+    End Sub
+
+    Private Sub LimpiarBuscar()
+
+        txt_bu_Apellido.Text = ""
+        txt_bu_Nombre.Text = ""
+        txt_bu_nombre_madre.Text = ""
+        txt_bu_cnie.Text = ""
+
+        Me.dgv_buscar.DataSource = Nothing
+
+    End Sub
+
+    Private Sub frm_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FuncNacionalidad.Mostrar_cmb_Nacionalidad()
+        FuncBarrio.Mostrar_cmb_Barrio()
+        FuncCiudad.Mostrar_cmb_Ciudad()
+        FuncProfesion.Mostrar_cmb_Profesion()
+
+
+    End Sub
+
+    Private Sub txt_nombre_TextChanged_1(sender As Object, e As EventArgs) Handles txt_nombre.TextChanged
+        txt_nombre.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub txt_Apellido_TextChanged_1(sender As Object, e As EventArgs) Handles txt_Apellido.TextChanged
+        txt_Apellido.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub txt_nombre_padre_TextChanged_1(sender As Object, e As EventArgs) Handles txt_nombre_padre.TextChanged
+        txt_nombre_padre.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub txt_nombre_madre_TextChanged_1(sender As Object, e As EventArgs) Handles txt_nombre_madre.TextChanged
+        txt_nombre_madre.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub txt_nombre_calle_TextChanged(sender As Object, e As EventArgs) Handles txt_nombre_calle.TextChanged
+        txt_nombre_calle.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub txt_cni_TextChanged(sender As Object, e As EventArgs) Handles txt_cni.TextChanged
+        txt_cni.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub txt_passaporte_TextChanged(sender As Object, e As EventArgs) Handles txt_passaporte.TextChanged
+        txt_passaporte.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub txt_permis_TextChanged(sender As Object, e As EventArgs) Handles txt_permis.TextChanged
+        txt_permis.CharacterCasing = CharacterCasing.Upper
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        frm_barrio.ShowDialog()
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        frm_Ciudad.showdialog()
+    End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        frm_LugarNacimiento.ShowDialog()
+    End Sub
+
 End Class

@@ -38,6 +38,9 @@ Partial Class frm_Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_bu_Nombre = New System.Windows.Forms.TextBox()
         Me.Panel_Formulario = New System.Windows.Forms.Panel()
+        Me.dtp_fecha_nacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.pb_Validar = New System.Windows.Forms.PictureBox()
         Me.lbl_Exist = New System.Windows.Forms.Label()
         Me.cmb_nacionalidad = New System.Windows.Forms.ComboBox()
@@ -48,10 +51,11 @@ Partial Class frm_Principal
         Me.rb_soltero = New System.Windows.Forms.RadioButton()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.cmb_lugarNacimiento = New System.Windows.Forms.ComboBox()
-        Me.dtp_fecha_nacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Adresse = New System.Windows.Forms.GroupBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Cmb_Ciudad = New System.Windows.Forms.ComboBox()
-        Me.cmb_bario = New System.Windows.Forms.ComboBox()
+        Me.cmb_barrio = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txt_nombre_calle = New System.Windows.Forms.TextBox()
@@ -85,13 +89,19 @@ Partial Class frm_Principal
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_Apellido = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Panel_Buscar.SuspendLayout()
         CType(Me.dgv_buscar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Formulario.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Adresse.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_buscar
@@ -131,7 +141,7 @@ Partial Class frm_Principal
         Me.Panel_Buscar.Controls.Add(Me.txt_bu_Apellido)
         Me.Panel_Buscar.Controls.Add(Me.Label1)
         Me.Panel_Buscar.Controls.Add(Me.txt_bu_Nombre)
-        Me.Panel_Buscar.Location = New System.Drawing.Point(73, 243)
+        Me.Panel_Buscar.Location = New System.Drawing.Point(21, 266)
         Me.Panel_Buscar.MinimumSize = New System.Drawing.Size(100, 75)
         Me.Panel_Buscar.Name = "Panel_Buscar"
         Me.Panel_Buscar.Opacity = 0.5R
@@ -247,13 +257,16 @@ Partial Class frm_Principal
         '
         'Panel_Formulario
         '
+        Me.Panel_Formulario.Controls.Add(Me.PictureBox6)
+        Me.Panel_Formulario.Controls.Add(Me.dtp_fecha_nacimiento)
+        Me.Panel_Formulario.Controls.Add(Me.PictureBox3)
+        Me.Panel_Formulario.Controls.Add(Me.PictureBox2)
         Me.Panel_Formulario.Controls.Add(Me.pb_Validar)
         Me.Panel_Formulario.Controls.Add(Me.lbl_Exist)
         Me.Panel_Formulario.Controls.Add(Me.cmb_nacionalidad)
         Me.Panel_Formulario.Controls.Add(Me.GroupBox1)
         Me.Panel_Formulario.Controls.Add(Me.Label18)
         Me.Panel_Formulario.Controls.Add(Me.cmb_lugarNacimiento)
-        Me.Panel_Formulario.Controls.Add(Me.dtp_fecha_nacimiento)
         Me.Panel_Formulario.Controls.Add(Me.Adresse)
         Me.Panel_Formulario.Controls.Add(Me.cmb_Profession)
         Me.Panel_Formulario.Controls.Add(Me.rb_Genero_m)
@@ -281,11 +294,39 @@ Partial Class frm_Principal
         Me.Panel_Formulario.Controls.Add(Me.txt_nombre)
         Me.Panel_Formulario.Controls.Add(Me.Label24)
         Me.Panel_Formulario.Controls.Add(Me.txt_Apellido)
-        Me.Panel_Formulario.Location = New System.Drawing.Point(270, 85)
+        Me.Panel_Formulario.Location = New System.Drawing.Point(355, 93)
         Me.Panel_Formulario.Name = "Panel_Formulario"
         Me.Panel_Formulario.Size = New System.Drawing.Size(767, 622)
         Me.Panel_Formulario.TabIndex = 11
         Me.Panel_Formulario.Visible = False
+        '
+        'dtp_fecha_nacimiento
+        '
+        Me.dtp_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_fecha_nacimiento.Location = New System.Drawing.Point(200, 181)
+        Me.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento"
+        Me.dtp_fecha_nacimiento.Size = New System.Drawing.Size(120, 20)
+        Me.dtp_fecha_nacimiento.TabIndex = 213
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox3.Location = New System.Drawing.Point(390, 152)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 212
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox2.Location = New System.Drawing.Point(327, 289)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 211
+        Me.PictureBox2.TabStop = False
         '
         'pb_Validar
         '
@@ -390,18 +431,12 @@ Partial Class frm_Principal
         Me.cmb_lugarNacimiento.TabIndex = 180
         Me.cmb_lugarNacimiento.Tag = ""
         '
-        'dtp_fecha_nacimiento
-        '
-        Me.dtp_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_nacimiento.Location = New System.Drawing.Point(201, 181)
-        Me.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento"
-        Me.dtp_fecha_nacimiento.Size = New System.Drawing.Size(120, 20)
-        Me.dtp_fecha_nacimiento.TabIndex = 179
-        '
         'Adresse
         '
+        Me.Adresse.Controls.Add(Me.PictureBox5)
+        Me.Adresse.Controls.Add(Me.PictureBox4)
         Me.Adresse.Controls.Add(Me.Cmb_Ciudad)
-        Me.Adresse.Controls.Add(Me.cmb_bario)
+        Me.Adresse.Controls.Add(Me.cmb_barrio)
         Me.Adresse.Controls.Add(Me.Label12)
         Me.Adresse.Controls.Add(Me.Label11)
         Me.Adresse.Controls.Add(Me.txt_nombre_calle)
@@ -415,32 +450,50 @@ Partial Class frm_Principal
         Me.Adresse.TabStop = False
         Me.Adresse.Text = "Adresse"
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox5.Location = New System.Drawing.Point(435, 73)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 214
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox4.Location = New System.Drawing.Point(199, 72)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 213
+        Me.PictureBox4.TabStop = False
+        '
         'Cmb_Ciudad
         '
         Me.Cmb_Ciudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cmb_Ciudad.FormattingEnabled = True
-        Me.Cmb_Ciudad.Items.AddRange(New Object() {"Alhoceima", "Tanger", "Ouajda", "Casa Blanca", "Rabat", "Tetuan", "Nador", "Agadir"})
-        Me.Cmb_Ciudad.Location = New System.Drawing.Point(274, 72)
+        Me.Cmb_Ciudad.Location = New System.Drawing.Point(274, 73)
         Me.Cmb_Ciudad.Name = "Cmb_Ciudad"
-        Me.Cmb_Ciudad.Size = New System.Drawing.Size(184, 21)
+        Me.Cmb_Ciudad.Size = New System.Drawing.Size(160, 21)
         Me.Cmb_Ciudad.TabIndex = 14
         Me.Cmb_Ciudad.Tag = ""
         '
-        'cmb_bario
+        'cmb_barrio
         '
-        Me.cmb_bario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_bario.FormattingEnabled = True
-        Me.cmb_bario.Items.AddRange(New Object() {"Centre Ville", "Hay Boujibar", "Hay Chatie Al Jamil", "Hay Mirador Haut", "Hay Mirador bas", "Hay Marmucha", "Hay Afazar", "Hay Sidi Abid", "Hay Bario Haddou", "Hay Al Marssa", "Hay Al Manzah", "Hay Roman", "Hay Al Jadid", "Hay Tighanimine"})
-        Me.cmb_bario.Location = New System.Drawing.Point(48, 72)
-        Me.cmb_bario.Name = "cmb_bario"
-        Me.cmb_bario.Size = New System.Drawing.Size(174, 21)
-        Me.cmb_bario.TabIndex = 13
-        Me.cmb_bario.Tag = ""
+        Me.cmb_barrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_barrio.FormattingEnabled = True
+        Me.cmb_barrio.Location = New System.Drawing.Point(48, 73)
+        Me.cmb_barrio.Name = "cmb_barrio"
+        Me.cmb_barrio.Size = New System.Drawing.Size(150, 21)
+        Me.cmb_barrio.TabIndex = 13
+        Me.cmb_barrio.Tag = ""
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(8, 75)
+        Me.Label12.Location = New System.Drawing.Point(8, 81)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(34, 13)
         Me.Label12.TabIndex = 149
@@ -465,7 +518,7 @@ Partial Class frm_Principal
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(228, 75)
+        Me.Label20.Location = New System.Drawing.Point(228, 81)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(40, 13)
         Me.Label20.TabIndex = 146
@@ -725,6 +778,16 @@ Partial Class frm_Principal
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox6.Location = New System.Drawing.Point(530, 181)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 214
+        Me.PictureBox6.TabStop = False
+        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -744,12 +807,17 @@ Partial Class frm_Principal
         CType(Me.dgv_buscar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Formulario.ResumeLayout(False)
         Me.Panel_Formulario.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Adresse.ResumeLayout(False)
         Me.Adresse.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -779,10 +847,9 @@ Partial Class frm_Principal
     Friend WithEvents rb_soltero As RadioButton
     Friend WithEvents Label18 As Label
     Friend WithEvents cmb_lugarNacimiento As ComboBox
-    Friend WithEvents dtp_fecha_nacimiento As DateTimePicker
     Friend WithEvents Adresse As GroupBox
     Friend WithEvents Cmb_Ciudad As ComboBox
-    Friend WithEvents cmb_bario As ComboBox
+    Friend WithEvents cmb_barrio As ComboBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents txt_nombre_calle As TextBox
@@ -816,4 +883,10 @@ Partial Class frm_Principal
     Friend WithEvents Label24 As Label
     Friend WithEvents txt_Apellido As TextBox
     Friend WithEvents pb_Validar As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents dtp_fecha_nacimiento As DateTimePicker
+    Friend WithEvents PictureBox6 As PictureBox
 End Class

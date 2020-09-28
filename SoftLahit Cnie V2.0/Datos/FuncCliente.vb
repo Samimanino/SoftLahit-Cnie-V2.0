@@ -119,7 +119,7 @@ Public Class FuncCliente
                 frm_Principal.cmb_Profession.Text = Drd("Profession")
                 frm_Principal.txt_num_direccion.Text = Drd("Numero_direccion")
                 frm_Principal.txt_nombre_calle.Text = Drd("Nombre_calle")
-                frm_Principal.cmb_bario.Text = Drd("Bario")
+                frm_Principal.cmb_barrio.Text = Drd("Bario")
                 frm_Principal.Cmb_Ciudad.Text = Drd("Ciudad")
                 frm_Principal.txt_cni.Text = Drd("Cnie")
                 frm_Principal.txt_passaporte.Text = Drd("num_passaporte")
@@ -171,7 +171,7 @@ Public Class FuncCliente
             cmd.Parameters.AddWithValue("@Cnie", TablaCliente._Cnie)
             cmd.Parameters.AddWithValue("@num_passaporte", TablaCliente._Num_passaporte)
             cmd.Parameters.AddWithValue("@num_permiso_conducir", TablaCliente._Num_permiso_conducir)
-            cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
+            '   cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
             cmd.Parameters.AddWithValue("@Fecha_ulti_modi", TablaCliente._Fecha_ulti_modi)
             cmd.Parameters.AddWithValue("@isDelete", TablaCliente._IsDelete)
 
@@ -216,7 +216,7 @@ Public Class FuncCliente
             cmd.Parameters.AddWithValue("@Cnie", TablaCliente._Cnie)
             cmd.Parameters.AddWithValue("@num_passaporte", TablaCliente._Num_passaporte)
             cmd.Parameters.AddWithValue("@num_permiso_conducir", TablaCliente._Num_permiso_conducir)
-            cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
+            'cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
             cmd.Parameters.AddWithValue("@Fecha_ulti_modi", TablaCliente._Fecha_ulti_modi)
 
             cmd.ExecuteNonQuery()
