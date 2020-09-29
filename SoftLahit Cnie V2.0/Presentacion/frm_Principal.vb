@@ -15,22 +15,37 @@
     Private Sub txt_cnie_TextChanged(sender As Object, e As EventArgs) Handles txt_bu_cnie.TextChanged
         txt_bu_cnie.CharacterCasing = CharacterCasing.Upper
         funcCliente.Buscar_Cliente_Avanzado()
+        Limpiar_DGV()
     End Sub
     Private Sub txt_Nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_bu_Nombre.TextChanged
         txt_bu_Nombre.CharacterCasing = CharacterCasing.Upper
         funcCliente.Buscar_Cliente_Avanzado()
+        Limpiar_DGV()
     End Sub
     Private Sub txt_Apellido_TextChanged(sender As Object, e As EventArgs) Handles txt_bu_Apellido.TextChanged
         txt_bu_Apellido.CharacterCasing = CharacterCasing.Upper
         funcCliente.Buscar_Cliente_Avanzado()
+        Limpiar_DGV()
     End Sub
     Private Sub txt_nombre_Padre_TextChanged(sender As Object, e As EventArgs) Handles txt_bu_nombre_Padre.TextChanged
         txt_bu_nombre_Padre.CharacterCasing = CharacterCasing.Upper
         funcCliente.Buscar_Cliente_Avanzado()
+        Limpiar_DGV()
     End Sub
     Private Sub txt_nombre_madre_TextChanged(sender As Object, e As EventArgs) Handles txt_bu_nombre_madre.TextChanged
         txt_bu_nombre_madre.CharacterCasing = CharacterCasing.Upper
         funcCliente.Buscar_Cliente_Avanzado()
+        Limpiar_DGV()
+    End Sub
+    Private Sub txt_profesion_TextChanged(sender As Object, e As EventArgs) Handles txt_profesion.TextChanged
+        txt_profesion.CharacterCasing = CharacterCasing.Upper
+        funcCliente.Buscar_Cliente_Avanzado()
+        Limpiar_DGV()
+    End Sub
+    Private Sub txt_barrio_TextChanged(sender As Object, e As EventArgs) Handles txt_barrio.TextChanged
+        txt_barrio.CharacterCasing = CharacterCasing.Upper
+        funcCliente.Buscar_Cliente_Avanzado()
+        Limpiar_DGV()
     End Sub
 
     Private Sub dgv_buscar_DoubleClick(sender As Object, e As EventArgs) Handles dgv_buscar.DoubleClick
@@ -42,23 +57,40 @@
             tablaCliente._ID = valor
             funcCliente.Mostrar_cliente_ID(tablaCliente)
             Panel_Formulario.Visible = True
+            Imagen.Visible = True
             Panel_Buscar.Visible = False
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+
     End Sub
 
     Private Sub btn_Nuevo_Cliente_Click(sender As Object, e As EventArgs) Handles btn_Nuevo_Cliente.Click
         Limpiar()
 
         Panel_Formulario.Visible = True
+        Imagen.Visible = True
         Panel_Buscar.Visible = False
     End Sub
+
+    Private Sub Limpiar_DGV()
+
+
+        If txt_bu_cnie.Text = "" And txt_bu_Nombre.Text = "" And txt_bu_Apellido.Text = "" And txt_bu_nombre_Padre.Text = "" And txt_bu_nombre_madre.Text = "" And txt_profesion.Text = "" And txt_barrio.Text = "" Then
+
+            Me.dgv_buscar.DataSource = Nothing
+        End If
+
+
+    End Sub
+
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Limpiar()
         Panel_Formulario.Visible = False
         Panel_Buscar.Visible = True
+        Imagen.Visible = False
     End Sub
 
     Private Sub Limpiar()
@@ -92,8 +124,8 @@
         Cmb_Ciudad.Items.Clear()
         cmb_lugarNacimiento.Items.Clear()
         cmb_nacionalidad.Items.Clear()
-        cmb_Profession.Items.Clear()
-
+        cmb_Profesion.Items.Clear()
+        Imagen.Image = My.Resources.No_Foto
     End Sub
 
     Private Sub pb_Validar_Click(sender As Object, e As EventArgs) Handles pb_Validar.Click
@@ -130,34 +162,41 @@
                 End If
 
                 tablaCliente._Estado_civil = Status_social
-                tablaCliente._Profession = cmb_Profession.Text
+                tablaCliente._Profesion = cmb_Profesion.Text
 
                 If txt_num_direccion.Text <> "" Then
                     tablaCliente._Numero_direccion = txt_num_direccion.Text
                 End If
 
                 tablaCliente._Nombre_calle = txt_nombre_calle.Text
-                tablaCliente._Bario = cmb_barrio.Text
+                tablaCliente._Barrio = cmb_barrio.Text
                 tablaCliente._Ciudad = Cmb_Ciudad.Text
                 tablaCliente._Cnie = txt_cni.Text
                 tablaCliente._Num_passaporte = txt_passaporte.Text
                 tablaCliente._Num_permiso_conducir = txt_permis.Text
                 tablaCliente._Fecha_ulti_modi = Today
                 tablaCliente._IsDelete = False
-                'Dim ms As New IO.MemoryStream()
-                'If Not Imagen.Image Is Nothing Then
-                '    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
-                'Else
-                '    Imagen.Image = My.Resources.NoFoto
-                '    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
-                'End If
-                'tablaCliente._Imagen = ms.GetBuffer
+
+                Dim ms As New IO.MemoryStream()
+                If Not Imagen.Image Is Nothing Then
+                    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
+                Else
+                    Imagen.Image = My.Resources.No_Foto
+                    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
+                End If
+                tablaCliente._Imagen = ms.GetBuffer
+
+
+
+
 
                 If funcCliente.Insertar_cliente(tablaCliente) Then
                     MessageBox.Show("Producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     Limpiar()
                     Panel_Buscar.Visible = True
+                    Imagen.Visible = False
                     Panel_Formulario.Visible = False
+
                     LimpiarCMB()
                     LimpiarBuscar()
                 Else
@@ -199,24 +238,24 @@
                     Status_social = "V"
                 End If
                 tablaCliente._Estado_civil = Status_social
-                tablaCliente._Profession = cmb_Profession.Text
+                tablaCliente._Profesion = cmb_Profesion.Text
                 tablaCliente._Numero_direccion = txt_num_direccion.Text
                 tablaCliente._Nombre_calle = txt_nombre_calle.Text
-                tablaCliente._Bario = cmb_barrio.Text
+                tablaCliente._Barrio = cmb_barrio.Text
                 tablaCliente._Ciudad = Cmb_Ciudad.Text
                 tablaCliente._Cnie = txt_cni.Text
                 tablaCliente._Num_passaporte = txt_passaporte.Text
                 tablaCliente._Num_permiso_conducir = txt_permis.Text
                 tablaCliente._Fecha_ulti_modi = Today
 
-                'Dim ms As New IO.MemoryStream()
-                'If Not Imagen.Image Is Nothing Then
-                '    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
-                'Else
-                '    Imagen.Image = My.Resources.NoFoto
-                '    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
-                'End If
-                'tablaCliente._Imagen = ms.GetBuffer
+                Dim ms As New IO.MemoryStream()
+                If Not Imagen.Image Is Nothing Then
+                    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
+                Else
+                    Imagen.Image = My.Resources.No_Foto
+                    Imagen.Image.Save(ms, Imagen.Image.RawFormat)
+                End If
+                tablaCliente._Imagen = ms.GetBuffer
 
 
                 If funcCliente.Editar_cliente(tablaCliente) Then
@@ -226,6 +265,7 @@
                     LimpiarCMB()
                     Panel_Buscar.Visible = True
                     Panel_Formulario.Visible = False
+                    Imagen.Visible = False
                 Else
                     MessageBox.Show("No fue modifcado intente de nuevo", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -326,4 +366,28 @@
 
     End Sub
 
+    Private Sub txt_num_direccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_num_direccion.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Imagen_Click(sender As Object, e As EventArgs) Handles Imagen.Click
+
+        If dlg.ShowDialog() = DialogResult.OK Then
+            Imagen.BackgroundImage = Nothing
+            Imagen.Image = New Bitmap(dlg.FileName)
+            Imagen.SizeMode = PictureBoxSizeMode.StretchImage
+        End If
+    End Sub
+
+    Private Sub dgv_buscar_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_buscar.CellContentClick
+
+    End Sub
 End Class

@@ -8,12 +8,17 @@ Public Class FuncCliente
     Private QuerryCNIE As String
     Private QuerryApellido As String
     Private QuerryNombre As String
+    Private QuerryProfesion As String
+    Private QuerryBarrio As String
 
     Private Val_Nombre As String
     Private Val_Apellido As String
     Private Val_CNIE As String
     Private Val_Nombre_padre As String
     Private Val_Nombre_Madre As String
+    Private Val_Profesion As String
+    Private Val_Barrio As String
+
 
     Public Sub Buscar_Cliente_Avanzado()
 
@@ -22,6 +27,9 @@ Public Class FuncCliente
         QuerryCNIE = ""
         QuerryNombre_padre = ""
         QuerryNombre_madre = ""
+        QuerryProfesion = ""
+        QuerryBarrio = ""
+
 
 
         Val_Nombre = ""
@@ -29,6 +37,8 @@ Public Class FuncCliente
         Val_CNIE = ""
         Val_Nombre_padre = ""
         Val_Nombre_Madre = ""
+        Val_Profesion = ""
+        VAl_BArrio = ""
 
 
         Val_Nombre = frm_Principal.txt_bu_Nombre.Text
@@ -36,6 +46,8 @@ Public Class FuncCliente
         Val_CNIE = frm_Principal.txt_bu_cnie.Text
         Val_Nombre_padre = frm_Principal.txt_bu_nombre_Padre.Text
         Val_Nombre_Madre = frm_Principal.txt_bu_nombre_madre.Text
+        Val_Profesion = frm_Principal.txt_profesion.Text
+        Val_Barrio = frm_Principal.txt_barrio.text
 
 
         If frm_Principal.txt_bu_Nombre.Text <> "" Then
@@ -58,9 +70,18 @@ Public Class FuncCliente
             QuerryNombre_madre = "And nombre_madre like '%" & Val_Nombre_Madre & "%' "
         End If
 
+        If frm_Principal.txt_profesion.Text <> "" Then
+            QuerryProfesion = "And Profesion Like '%" & Val_Profesion & "%' "
+        End If
+
+        If frm_Principal.txt_barrio.Text <> "" Then
+            QuerryBarrio = "And barrio Like '%" & Val_Barrio & "%' "
+
+        End If
+
         Try
             Conectar()
-            adap = New SqlDataAdapter("SELECT id, Cnie, nombre as 'Prenom', apellido as 'Nom', nombre_padre as 'Nom du pere', nombre_madre as 'nom du mere' FROM [CNIE_DDBB].[dbo].[Cliente] WHERE  1=1  " & QuerryNombre & "   " & QuerryApellido & "  " & QuerryCNIE & " " & QuerryNombre_padre & " " & QuerryNombre_madre & " ORDER BY ID asc", Con)
+            adap = New SqlDataAdapter("SELECT id, Cnie, nombre as 'Prenom', apellido as 'Nom', nombre_padre as 'Nom du pere', nombre_madre as 'nom du mere' FROM [CNIE_DDBB].[dbo].[Cliente] WHERE  1=1  " & QuerryNombre & "   " & QuerryApellido & "  " & QuerryCNIE & " " & QuerryNombre_padre & " " & QuerryProfesion & "  " & QuerryBarrio & " " & QuerryNombre_madre & " ORDER BY ID asc", Con)
             dat = New DataTable
             adap.Fill(dat)
             frm_Principal.dgv_buscar.DataSource = dat
@@ -116,19 +137,20 @@ Public Class FuncCliente
                     frm_Principal.rb_viudo.Checked = True
                 End If
 
-                frm_Principal.cmb_Profession.Text = Drd("Profession")
+                frm_Principal.cmb_Profesion.Text = Drd("Profesion")
                 frm_Principal.txt_num_direccion.Text = Drd("Numero_direccion")
                 frm_Principal.txt_nombre_calle.Text = Drd("Nombre_calle")
-                frm_Principal.cmb_barrio.Text = Drd("Bario")
+                frm_Principal.cmb_barrio.Text = Drd("barrio")
                 frm_Principal.Cmb_Ciudad.Text = Drd("Ciudad")
                 frm_Principal.txt_cni.Text = Drd("Cnie")
                 frm_Principal.txt_passaporte.Text = Drd("num_passaporte")
                 frm_Principal.txt_permis.Text = Drd("num_permiso_conducir")
-                'frm_Principal.Imagen.BackgroundImage = Nothing
-                'Dim b() As Byte = Drd("imagen")
-                'Dim ms As New IO.MemoryStream(b)
-                'frm_Principal.Imagen.Image = Image.FromStream(ms)
-                'frm_Principal.Imagen.SizeMode = PictureBoxSizeMode.StretchImage
+
+                frm_Principal.Imagen.BackgroundImage = Nothing
+                Dim b() As Byte = Drd("imagen")
+                Dim ms As New IO.MemoryStream(b)
+                frm_Principal.Imagen.Image = Image.FromStream(ms)
+                frm_Principal.Imagen.SizeMode = PictureBoxSizeMode.StretchImage
 
             End While
 
@@ -163,15 +185,15 @@ Public Class FuncCliente
             cmd.Parameters.AddWithValue("@Nombre_padre", TablaCliente._Nombre_padre)
             cmd.Parameters.AddWithValue("@Nombre_madre", TablaCliente._Nombre_madre)
             cmd.Parameters.AddWithValue("@Estado_civil", TablaCliente._Estado_civil)
-            cmd.Parameters.AddWithValue("@Profession", TablaCliente._Profession)
+            cmd.Parameters.AddWithValue("@Profesion", TablaCliente._Profesion)
             cmd.Parameters.AddWithValue("@Numero_direccion", TablaCliente._Numero_direccion)
             cmd.Parameters.AddWithValue("@Nombre_calle", TablaCliente._Nombre_calle)
-            cmd.Parameters.AddWithValue("@Bario", TablaCliente._Bario)
+            cmd.Parameters.AddWithValue("@barrio", TablaCliente._Barrio)
             cmd.Parameters.AddWithValue("@Ciudad", TablaCliente._Ciudad)
             cmd.Parameters.AddWithValue("@Cnie", TablaCliente._Cnie)
             cmd.Parameters.AddWithValue("@num_passaporte", TablaCliente._Num_passaporte)
             cmd.Parameters.AddWithValue("@num_permiso_conducir", TablaCliente._Num_permiso_conducir)
-            '   cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
+            cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
             cmd.Parameters.AddWithValue("@Fecha_ulti_modi", TablaCliente._Fecha_ulti_modi)
             cmd.Parameters.AddWithValue("@isDelete", TablaCliente._IsDelete)
 
@@ -208,15 +230,15 @@ Public Class FuncCliente
             cmd.Parameters.AddWithValue("@Nombre_padre", TablaCliente._Nombre_padre)
             cmd.Parameters.AddWithValue("@Nombre_madre", TablaCliente._Nombre_madre)
             cmd.Parameters.AddWithValue("@Estado_civil", TablaCliente._Estado_civil)
-            cmd.Parameters.AddWithValue("@Profession", TablaCliente._Profession)
+            cmd.Parameters.AddWithValue("@Profesion", TablaCliente._Profesion)
             cmd.Parameters.AddWithValue("@Numero_direccion", TablaCliente._Numero_direccion)
             cmd.Parameters.AddWithValue("@Nombre_calle", TablaCliente._Nombre_calle)
-            cmd.Parameters.AddWithValue("@Bario", TablaCliente._Bario)
+            cmd.Parameters.AddWithValue("@barrio", TablaCliente._Barrio)
             cmd.Parameters.AddWithValue("@Ciudad", TablaCliente._Ciudad)
             cmd.Parameters.AddWithValue("@Cnie", TablaCliente._Cnie)
             cmd.Parameters.AddWithValue("@num_passaporte", TablaCliente._Num_passaporte)
             cmd.Parameters.AddWithValue("@num_permiso_conducir", TablaCliente._Num_permiso_conducir)
-            'cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
+            cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
             cmd.Parameters.AddWithValue("@Fecha_ulti_modi", TablaCliente._Fecha_ulti_modi)
 
             cmd.ExecuteNonQuery()

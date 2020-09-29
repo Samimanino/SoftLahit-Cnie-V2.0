@@ -10,10 +10,10 @@
     Dim Nombre_padre As String
     Dim Nombre_madre As String
     Dim Estado_civil As String
-    Dim Profession As String
+    Dim Profesion As String
     Dim Numero_direccion As Integer
     Dim Nombre_calle As String
-    Dim Bario As String
+    Dim Barrio As String
     Dim Ciudad As String
     Dim Cnie As String
     Dim num_passaporte As String
@@ -112,12 +112,12 @@
         End Set
     End Property
 
-    Public Property _Profession As String
+    Public Property _Profesion As String
         Get
-            Return Profession
+            Return Profesion
         End Get
         Set(value As String)
-            Profession = value
+            Profesion = value
         End Set
     End Property
 
@@ -139,12 +139,12 @@
         End Set
     End Property
 
-    Public Property _Bario As String
+    Public Property _Barrio As String
         Get
-            Return Bario
+            Return Barrio
         End Get
         Set(value As String)
-            Bario = value
+            Barrio = value
         End Set
     End Property
 

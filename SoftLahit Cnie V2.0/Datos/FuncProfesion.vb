@@ -82,7 +82,7 @@ Public Class FuncProfesion
 
     Public Function Mostrar_cmb_Profesion()
         Try
-            frm_Principal.cmb_Profession.Items.Clear()
+            frm_Principal.cmb_Profesion.Items.Clear()
             If Con.State = ConnectionState.Closed Then
                 Conectar()
             End If
@@ -96,7 +96,7 @@ Public Class FuncProfesion
             Drd = cmd.ExecuteReader()
 
             While Drd.Read()
-                frm_Principal.cmb_Profession.Items.Add(Drd("Nombre").ToString)
+                frm_Principal.cmb_Profesion.Items.Add(Drd("Nombre").ToString)
             End While
 
             Return True
