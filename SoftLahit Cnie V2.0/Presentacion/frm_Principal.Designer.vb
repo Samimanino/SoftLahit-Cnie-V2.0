@@ -72,15 +72,13 @@ Partial Class frm_Principal
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txt_Apellido = New System.Windows.Forms.TextBox()
-        Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.btn_Nuevo_Cliente = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Imagen = New System.Windows.Forms.PictureBox()
-        Me.dlg = New System.Windows.Forms.OpenFileDialog()
-        Me.btn_buscar = New System.Windows.Forms.Button()
-        Me.btn_Nuevo_Cliente = New System.Windows.Forms.Button()
         Me.Panel_buscar = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -99,6 +97,8 @@ Partial Class frm_Principal
         Me.txt_bu_Apellido = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_bu_Nombre = New System.Windows.Forms.TextBox()
+        Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.dlg = New System.Windows.Forms.OpenFileDialog()
         Me.Panel_alta.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,10 +155,10 @@ Partial Class frm_Principal
         Me.Panel_alta.Controls.Add(Me.txt_nombre)
         Me.Panel_alta.Controls.Add(Me.Label24)
         Me.Panel_alta.Controls.Add(Me.txt_Apellido)
-        Me.Panel_alta.Location = New System.Drawing.Point(271, 100)
+        Me.Panel_alta.Location = New System.Drawing.Point(176, 111)
         Me.Panel_alta.Name = "Panel_alta"
         Me.Panel_alta.Size = New System.Drawing.Size(776, 698)
-        Me.Panel_alta.TabIndex = 0
+        Me.Panel_alta.TabIndex = 177
         Me.Panel_alta.Visible = False
         '
         'lbl_ultima_modi
@@ -610,28 +610,39 @@ Partial Class frm_Principal
         Me.txt_Apellido.Size = New System.Drawing.Size(460, 20)
         Me.txt_Apellido.TabIndex = 218
         '
-        'btn_eliminar
+        'btn_buscar
         '
-        Me.btn_eliminar.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminar.ForeColor = System.Drawing.Color.Red
-        Me.btn_eliminar.Location = New System.Drawing.Point(1062, 622)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(225, 38)
-        Me.btn_eliminar.TabIndex = 173
-        Me.btn_eliminar.Text = "Eliminar"
-        Me.btn_eliminar.UseVisualStyleBackColor = False
-        Me.btn_eliminar.Visible = False
+        Me.btn_buscar.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_buscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_buscar.Location = New System.Drawing.Point(277, 23)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(134, 33)
+        Me.btn_buscar.TabIndex = 184
+        Me.btn_buscar.Text = "Rechercher"
+        Me.btn_buscar.UseVisualStyleBackColor = False
+        '
+        'btn_Nuevo_Cliente
+        '
+        Me.btn_Nuevo_Cliente.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_Nuevo_Cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Nuevo_Cliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_Nuevo_Cliente.Location = New System.Drawing.Point(137, 23)
+        Me.btn_Nuevo_Cliente.Name = "btn_Nuevo_Cliente"
+        Me.btn_Nuevo_Cliente.Size = New System.Drawing.Size(134, 33)
+        Me.btn_Nuevo_Cliente.TabIndex = 183
+        Me.btn_Nuevo_Cliente.Text = "Nouvelle Fiche"
+        Me.btn_Nuevo_Cliente.UseVisualStyleBackColor = False
         '
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button4.Location = New System.Drawing.Point(1062, 509)
+        Me.Button4.Location = New System.Drawing.Point(967, 520)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(225, 38)
-        Me.Button4.TabIndex = 172
+        Me.Button4.TabIndex = 182
         Me.Button4.Text = "DECLARATION DE PERTE"
         Me.Button4.UseVisualStyleBackColor = False
         Me.Button4.Visible = False
@@ -641,10 +652,10 @@ Partial Class frm_Principal
         Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button3.Location = New System.Drawing.Point(1062, 459)
+        Me.Button3.Location = New System.Drawing.Point(967, 470)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(225, 38)
-        Me.Button3.TabIndex = 171
+        Me.Button3.TabIndex = 181
         Me.Button3.Text = "ATTESTATION DE RESIDENCE"
         Me.Button3.UseVisualStyleBackColor = False
         Me.Button3.Visible = False
@@ -654,10 +665,10 @@ Partial Class frm_Principal
         Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(1062, 403)
+        Me.Button2.Location = New System.Drawing.Point(967, 414)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(225, 38)
-        Me.Button2.TabIndex = 170
+        Me.Button2.TabIndex = 180
         Me.Button2.Text = "CERTIFICAT DE RESIDENCE"
         Me.Button2.UseVisualStyleBackColor = False
         Me.Button2.Visible = False
@@ -667,10 +678,10 @@ Partial Class frm_Principal
         Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(1062, 352)
+        Me.Button1.Location = New System.Drawing.Point(967, 363)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(225, 38)
-        Me.Button1.TabIndex = 169
+        Me.Button1.TabIndex = 179
         Me.Button1.Text = "CASIER DE POLICE"
         Me.Button1.UseVisualStyleBackColor = False
         Me.Button1.Visible = False
@@ -680,42 +691,14 @@ Partial Class frm_Principal
         Me.Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Imagen.ErrorImage = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.No_Foto
         Me.Imagen.ImageLocation = "centre"
-        Me.Imagen.Location = New System.Drawing.Point(1062, 100)
+        Me.Imagen.Location = New System.Drawing.Point(967, 111)
         Me.Imagen.Margin = New System.Windows.Forms.Padding(2)
         Me.Imagen.Name = "Imagen"
         Me.Imagen.Size = New System.Drawing.Size(225, 225)
         Me.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.Imagen.TabIndex = 168
+        Me.Imagen.TabIndex = 178
         Me.Imagen.TabStop = False
         Me.Imagen.Visible = False
-        '
-        'dlg
-        '
-        Me.dlg.FileName = "OpenFileDialog1"
-        '
-        'btn_buscar
-        '
-        Me.btn_buscar.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_buscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_buscar.Location = New System.Drawing.Point(372, 12)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(134, 33)
-        Me.btn_buscar.TabIndex = 175
-        Me.btn_buscar.Text = "Rechercher"
-        Me.btn_buscar.UseVisualStyleBackColor = False
-        '
-        'btn_Nuevo_Cliente
-        '
-        Me.btn_Nuevo_Cliente.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_Nuevo_Cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Nuevo_Cliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn_Nuevo_Cliente.Location = New System.Drawing.Point(232, 12)
-        Me.btn_Nuevo_Cliente.Name = "btn_Nuevo_Cliente"
-        Me.btn_Nuevo_Cliente.Size = New System.Drawing.Size(134, 33)
-        Me.btn_Nuevo_Cliente.TabIndex = 174
-        Me.btn_Nuevo_Cliente.Text = "Nouvelle Fiche"
-        Me.btn_Nuevo_Cliente.UseVisualStyleBackColor = False
         '
         'Panel_buscar
         '
@@ -736,10 +719,10 @@ Partial Class frm_Principal
         Me.Panel_buscar.Controls.Add(Me.txt_bu_Apellido)
         Me.Panel_buscar.Controls.Add(Me.Label1)
         Me.Panel_buscar.Controls.Add(Me.txt_bu_Nombre)
-        Me.Panel_buscar.Location = New System.Drawing.Point(415, 225)
+        Me.Panel_buscar.Location = New System.Drawing.Point(320, 236)
         Me.Panel_buscar.Name = "Panel_buscar"
         Me.Panel_buscar.Size = New System.Drawing.Size(505, 367)
-        Me.Panel_buscar.TabIndex = 176
+        Me.Panel_buscar.TabIndex = 185
         Me.Panel_buscar.Visible = False
         '
         'PictureBox7
@@ -905,17 +888,32 @@ Partial Class frm_Principal
         Me.txt_bu_Nombre.Size = New System.Drawing.Size(274, 20)
         Me.txt_bu_Nombre.TabIndex = 217
         '
+        'btn_eliminar
+        '
+        Me.btn_eliminar.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_eliminar.ForeColor = System.Drawing.Color.Red
+        Me.btn_eliminar.Location = New System.Drawing.Point(967, 671)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(225, 38)
+        Me.btn_eliminar.TabIndex = 186
+        Me.btn_eliminar.Text = "Eliminar"
+        Me.btn_eliminar.UseVisualStyleBackColor = False
+        Me.btn_eliminar.Visible = False
+        '
+        'dlg
+        '
+        Me.dlg.FileName = "OpenFileDialog1"
+        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.main_bg1
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1309, 856)
+        Me.ClientSize = New System.Drawing.Size(1328, 833)
+        Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.Panel_alta)
         Me.Controls.Add(Me.btn_buscar)
         Me.Controls.Add(Me.btn_Nuevo_Cliente)
-        Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -923,7 +921,7 @@ Partial Class frm_Principal
         Me.Controls.Add(Me.Imagen)
         Me.Controls.Add(Me.Panel_buscar)
         Me.Name = "frm_Principal"
-        Me.Text = "Form1"
+        Me.Text = "Form2"
         Me.Panel_alta.ResumeLayout(False)
         Me.Panel_alta.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
@@ -946,6 +944,9 @@ Partial Class frm_Principal
     End Sub
 
     Friend WithEvents Panel_alta As Panel
+    Friend WithEvents lbl_ultima_modi As Label
+    Friend WithEvents Lbl_casado_com As Label
+    Friend WithEvents txt_casado_con As TextBox
     Friend WithEvents cmb_Estado_Civil As ComboBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents dtp_fecha_nacimiento As DateTimePicker
@@ -992,18 +993,17 @@ Partial Class frm_Principal
     Friend WithEvents txt_nombre As TextBox
     Friend WithEvents Label24 As Label
     Friend WithEvents txt_Apellido As TextBox
-    Friend WithEvents Lbl_casado_com As Label
-    Friend WithEvents txt_casado_con As TextBox
-    Friend WithEvents btn_eliminar As Button
+    Friend WithEvents btn_buscar As Button
+    Friend WithEvents btn_Nuevo_Cliente As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Imagen As PictureBox
-    Friend WithEvents dlg As OpenFileDialog
-    Friend WithEvents btn_buscar As Button
-    Friend WithEvents btn_Nuevo_Cliente As Button
     Friend WithEvents Panel_buscar As Panel
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents cmb_bu_Barrio As ComboBox
     Friend WithEvents cmb_bu_Profesion As ComboBox
     Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
@@ -1018,8 +1018,6 @@ Partial Class frm_Principal
     Friend WithEvents txt_bu_Apellido As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_bu_Nombre As TextBox
-    Friend WithEvents cmb_bu_Barrio As ComboBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents lbl_ultima_modi As Label
+    Friend WithEvents btn_eliminar As Button
+    Friend WithEvents dlg As OpenFileDialog
 End Class

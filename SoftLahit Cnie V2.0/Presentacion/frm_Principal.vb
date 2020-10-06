@@ -325,7 +325,7 @@
 
     Private Sub cmb_bu_Profesion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_bu_Profesion.SelectedIndexChanged
         funcCliente.Buscar_Cliente_Avanzado()
-        Limpiar_DGV
+        Limpiar_DGV()
 
     End Sub
 
@@ -424,4 +424,5 @@
         frm_report.CrystalReportViewer1.ReportSource = objReport
 
     End Sub
+
 End Class
