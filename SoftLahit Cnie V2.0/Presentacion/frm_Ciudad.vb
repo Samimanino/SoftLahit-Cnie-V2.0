@@ -20,10 +20,11 @@
                 If FuncCiudad.Insertar_Ciudad(tablaCiudad) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-                FuncCiudad.Mostrar_Ciudad()
+
 
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -38,7 +39,7 @@
                 If FuncCiudad.Editar_Ciudad(tablaCiudad) Then
                     MessageBox.Show("Se ha modificado correctamnete", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
-                    FuncCiudad.Mostrar_Ciudad()
+                    Me.Dispose()
 
                 Else
                     MessageBox.Show("No fue modifcado intente de nuevo", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -65,11 +66,11 @@
                 If FuncCiudad.Eliminar_Ciudad(tablaCiudad) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
-                FuncCiudad.Mostrar_Ciudad()
 
             Catch ex As Exception
                 MsgBox(ex.Message)

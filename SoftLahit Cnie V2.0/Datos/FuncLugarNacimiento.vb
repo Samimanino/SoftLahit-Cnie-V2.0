@@ -13,8 +13,6 @@ Public Class FuncLugarNacimiento
 
             cmd.Parameters.AddWithValue("@Nombre", TablaLugarNacimiento._Nombre)
 
-
-
             If cmd.ExecuteNonQuery Then
                 Return True
             Else
@@ -62,8 +60,6 @@ Public Class FuncLugarNacimiento
             cmd.Connection = Con
 
             cmd.Parameters.AddWithValue("@ID", TablaLugarNacimiento._ID)
-
-
 
             If cmd.ExecuteNonQuery Then
                 Return True

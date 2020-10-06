@@ -13,8 +13,6 @@ Public Class FuncNacionalidad
 
             cmd.Parameters.AddWithValue("@Nombre", TablaNacionalidad._Nombre)
 
-
-
             If cmd.ExecuteNonQuery Then
                 Return True
             Else

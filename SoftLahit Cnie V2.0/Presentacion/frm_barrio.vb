@@ -22,11 +22,11 @@
                 If FuncBarrio.Insertar_Barrio(tablaBarrio) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
-                FuncBarrio.Mostrar_Barrio()
 
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -41,8 +41,7 @@
                 If FuncBarrio.Editar_Barrio(tablaBarrio) Then
                     MessageBox.Show("Se ha modificado correctamnete", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
-                    FuncBarrio.Mostrar_Barrio()
-
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No fue modifcado intente de nuevo", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -68,10 +67,11 @@
                 If FuncBarrio.Eliminar_Barrio(tablaBarrio) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-                FuncBarrio.Mostrar_Barrio()
+
 
             Catch ex As Exception
                 MsgBox(ex.Message)

@@ -19,6 +19,49 @@ Public Class FuncCliente
     Private Val_Profesion As String
     Private Val_Barrio As String
 
+    Public Function Insertar_cliente(ByVal TablaCliente As Tabla_Cliente) As Boolean
+        Try
+            Conectar()
+            cmd = New SqlCommand("insertar_Cliente")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = Con
+
+            cmd.Parameters.AddWithValue("@Nombre", TablaCliente._Nombre)
+            cmd.Parameters.AddWithValue("@Apellido", TablaCliente._Apellido)
+            cmd.Parameters.AddWithValue("@Genero", TablaCliente._Genero)
+            cmd.Parameters.AddWithValue("@Nacionalidad", TablaCliente._Nacionalidad)
+            cmd.Parameters.AddWithValue("@Fecha_nacimiento", TablaCliente._Fecha_nacimiento)
+            cmd.Parameters.AddWithValue("@LugarNacimiento", TablaCliente._LugarNacimiento)
+            cmd.Parameters.AddWithValue("@Nombre_padre", TablaCliente._Nombre_padre)
+            cmd.Parameters.AddWithValue("@Nombre_madre", TablaCliente._Nombre_madre)
+            cmd.Parameters.AddWithValue("@Estado_civil", TablaCliente._Estado_civil)
+            cmd.Parameters.AddWithValue("@Casado_con", TablaCliente._Casado_con)
+            cmd.Parameters.AddWithValue("@Profesion", TablaCliente._Profesion)
+            cmd.Parameters.AddWithValue("@Numero_direccion", TablaCliente._Numero_direccion)
+            cmd.Parameters.AddWithValue("@Nombre_calle", TablaCliente._Nombre_calle)
+            cmd.Parameters.AddWithValue("@barrio", TablaCliente._Barrio)
+            cmd.Parameters.AddWithValue("@Ciudad", TablaCliente._Ciudad)
+            cmd.Parameters.AddWithValue("@Cnie", TablaCliente._Cnie)
+            cmd.Parameters.AddWithValue("@num_passaporte", TablaCliente._Num_passaporte)
+            cmd.Parameters.AddWithValue("@num_permiso_conducir", TablaCliente._Num_permiso_conducir)
+            cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
+            cmd.Parameters.AddWithValue("@Fecha_ulti_modi", TablaCliente._Fecha_ulti_modi)
+
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As SqlException
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            Desconectar()
+        End Try
+
+    End Function
 
     Public Sub Buscar_Cliente_Avanzado()
 
@@ -30,15 +73,13 @@ Public Class FuncCliente
         QuerryProfesion = ""
         QuerryBarrio = ""
 
-
-
         Val_Nombre = ""
         Val_Apellido = ""
         Val_CNIE = ""
         Val_Nombre_padre = ""
         Val_Nombre_Madre = ""
         Val_Profesion = ""
-        VAl_BArrio = ""
+        Val_Barrio = ""
 
 
         Val_Nombre = frm_Principal.txt_bu_Nombre.Text
@@ -46,8 +87,8 @@ Public Class FuncCliente
         Val_CNIE = frm_Principal.txt_bu_cnie.Text
         Val_Nombre_padre = frm_Principal.txt_bu_nombre_Padre.Text
         Val_Nombre_Madre = frm_Principal.txt_bu_nombre_madre.Text
-        Val_Profesion = frm_Principal.txt_profesion.Text
-        Val_Barrio = frm_Principal.txt_barrio.text
+        Val_Profesion = frm_Principal.cmb_bu_Profesion.Text
+        Val_Barrio = frm_Principal.cmb_bu_Barrio.Text
 
 
         If frm_Principal.txt_bu_Nombre.Text <> "" Then
@@ -70,11 +111,11 @@ Public Class FuncCliente
             QuerryNombre_madre = "And nombre_madre like '%" & Val_Nombre_Madre & "%' "
         End If
 
-        If frm_Principal.txt_profesion.Text <> "" Then
+        If frm_Principal.cmb_bu_Profesion.Text <> "" And frm_Principal.cmb_bu_Profesion.Text <> "Todo" Then
             QuerryProfesion = "And Profesion Like '%" & Val_Profesion & "%' "
         End If
 
-        If frm_Principal.txt_barrio.Text <> "" Then
+        If frm_Principal.cmb_bu_Barrio.Text <> "" Then
             QuerryBarrio = "And barrio Like '%" & Val_Barrio & "%' "
 
         End If
@@ -92,6 +133,20 @@ Public Class FuncCliente
         End Try
     End Sub
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     Public Function Mostrar_cliente_ID(ByVal tablaCliente As Tabla_Cliente) As Boolean
         Try
             Conectar()
@@ -107,10 +162,15 @@ Public Class FuncCliente
 
                 'frm_Principal.lbl_id.Text = Drd("ID")
 
-                Dim ID As String
-                Dim Fecha As String = DateTime.Now.ToString("yyyy-MM-dd" & " A " & "hh:mm:ss")
-                ID = Drd("ID") & " (" & Fecha & ")"
-                frm_Principal.lbl_id.Text = ID
+                'Dim ID As String
+                'Dim Fecha As String = DateTime.Now.ToString("yyyy-MM-dd" & " A " & "hh:mm:ss")
+                'ID = Drd("ID") & " (" & Fecha & ")"
+                'frm_Principal.lbl_id.Text = ID
+
+
+
+                frm_Principal.lbl_id.Text = Drd("id")
+                frm_Principal.lbl_ultima_modi.Text = Drd("Fecha_ulti_modi")
 
 
                 frm_Principal.txt_nombre.Text = Drd("Nombre")
@@ -127,15 +187,8 @@ Public Class FuncCliente
                 frm_Principal.txt_nombre_padre.Text = Drd("Nombre_padre")
                 frm_Principal.txt_nombre_madre.Text = Drd("Nombre_madre")
 
-                If Drd("Estado_civil") = "C" Then
-                    frm_Principal.rb_casado.Checked = True
-                ElseIf Drd("Estado_civil") = "D" Then
-                    frm_Principal.rb_divorciado.Checked = True
-                ElseIf Drd("Estado_civil") = "S" Then
-                    frm_Principal.rb_soltero.Checked = True
-                ElseIf Drd("Estado_civil") = "V" Then
-                    frm_Principal.rb_viudo.Checked = True
-                End If
+                frm_Principal.cmb_Estado_Civil.Text = Drd("Estado_civil")
+                frm_Principal.txt_casado_con.Text = Drd("Casado_con")
 
                 frm_Principal.cmb_Profesion.Text = Drd("Profesion")
                 frm_Principal.txt_num_direccion.Text = Drd("Numero_direccion")
@@ -169,48 +222,7 @@ Public Class FuncCliente
 
     End Function
 
-    Public Function Insertar_cliente(ByVal TablaCliente As Tabla_Cliente) As Boolean
-        Try
-            Conectar()
-            cmd = New SqlCommand("insertar_Cliente")
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.Connection = Con
 
-            cmd.Parameters.AddWithValue("@Nombre", TablaCliente._Nombre)
-            cmd.Parameters.AddWithValue("@Apellido", TablaCliente._Apellido)
-            cmd.Parameters.AddWithValue("@Genero", TablaCliente._Genero)
-            cmd.Parameters.AddWithValue("@Nacionalidad", TablaCliente._Nacionalidad)
-            cmd.Parameters.AddWithValue("@Fecha_nacimiento", TablaCliente._Fecha_nacimiento)
-            cmd.Parameters.AddWithValue("@LugarNacimiento", TablaCliente._LugarNacimiento)
-            cmd.Parameters.AddWithValue("@Nombre_padre", TablaCliente._Nombre_padre)
-            cmd.Parameters.AddWithValue("@Nombre_madre", TablaCliente._Nombre_madre)
-            cmd.Parameters.AddWithValue("@Estado_civil", TablaCliente._Estado_civil)
-            cmd.Parameters.AddWithValue("@Profesion", TablaCliente._Profesion)
-            cmd.Parameters.AddWithValue("@Numero_direccion", TablaCliente._Numero_direccion)
-            cmd.Parameters.AddWithValue("@Nombre_calle", TablaCliente._Nombre_calle)
-            cmd.Parameters.AddWithValue("@barrio", TablaCliente._Barrio)
-            cmd.Parameters.AddWithValue("@Ciudad", TablaCliente._Ciudad)
-            cmd.Parameters.AddWithValue("@Cnie", TablaCliente._Cnie)
-            cmd.Parameters.AddWithValue("@num_passaporte", TablaCliente._Num_passaporte)
-            cmd.Parameters.AddWithValue("@num_permiso_conducir", TablaCliente._Num_permiso_conducir)
-            cmd.Parameters.AddWithValue("@Imagen", TablaCliente._Imagen)
-            cmd.Parameters.AddWithValue("@Fecha_ulti_modi", TablaCliente._Fecha_ulti_modi)
-            cmd.Parameters.AddWithValue("@isDelete", TablaCliente._IsDelete)
-
-            If cmd.ExecuteNonQuery Then
-                Return True
-            Else
-                Return False
-            End If
-
-        Catch ex As SqlException
-            MsgBox(ex.Message)
-            Return False
-        Finally
-            Desconectar()
-        End Try
-
-    End Function
 
     Public Function Editar_cliente(ByVal TablaCliente As Tabla_Cliente) As Boolean
 
@@ -230,6 +242,7 @@ Public Class FuncCliente
             cmd.Parameters.AddWithValue("@Nombre_padre", TablaCliente._Nombre_padre)
             cmd.Parameters.AddWithValue("@Nombre_madre", TablaCliente._Nombre_madre)
             cmd.Parameters.AddWithValue("@Estado_civil", TablaCliente._Estado_civil)
+            cmd.Parameters.AddWithValue("@Casado_con", TablaCliente._Casado_con)
             cmd.Parameters.AddWithValue("@Profesion", TablaCliente._Profesion)
             cmd.Parameters.AddWithValue("@Numero_direccion", TablaCliente._Numero_direccion)
             cmd.Parameters.AddWithValue("@Nombre_calle", TablaCliente._Nombre_calle)
@@ -252,5 +265,29 @@ Public Class FuncCliente
         End Try
 
     End Function
+
+    Public Function Eliminar_Cliente(ByVal TablaCliente As Tabla_Cliente) As Boolean
+        Try
+            Conectar()
+            cmd = New SqlCommand("Eliminar_Cliente")
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Connection = Con
+
+            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = TablaCliente._ID
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+
+        End Try
+
+    End Function
+
 
 End Class

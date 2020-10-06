@@ -22,12 +22,12 @@
                 If FuncNacionalidad.Insertar_Nacionalidad(tablaNacionalidad) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
 
-                FuncNacionalidad.Mostrar_Nacionalidad()
 
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -42,8 +42,8 @@
                 If FuncNacionalidad.Editar_Nacionalidad(tablaNacionalidad) Then
                     MessageBox.Show("Se ha modificado correctamnete", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
-                    FuncNacionalidad.Mostrar_Nacionalidad()
 
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No fue modifcado intente de nuevo", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -69,10 +69,10 @@
                 If FuncNacionalidad.Eliminar_Nacionalidad(tablaNacionalidad) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-                FuncNacionalidad.Mostrar_Nacionalidad()
 
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -88,8 +88,6 @@
 
     Private Sub frm_Profesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FuncNacionalidad.Mostrar_Nacionalidad()
-        ' dgv_Principal.Columns("ID").Visible = False
-
     End Sub
 
     Private Sub dgv_Principal_DoubleClick(sender As Object, e As EventArgs) Handles dgv_Principal.DoubleClick

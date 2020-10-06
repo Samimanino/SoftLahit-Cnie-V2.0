@@ -96,6 +96,7 @@ Public Class FuncBarrio
 
             While Drd.Read()
                 frm_Principal.cmb_barrio.Items.Add(Drd("Nombre").ToString)
+                frm_Principal.cmb_bu_Barrio.Items.Add(Drd("Nombre").ToString)
             End While
 
             Return True
@@ -112,6 +113,7 @@ Public Class FuncBarrio
         End Try
 
     End Function
+
 
     Public Sub Mostrar_Barrio()
         Dim adapt As New SqlDataAdapter

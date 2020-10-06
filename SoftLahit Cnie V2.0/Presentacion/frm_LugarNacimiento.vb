@@ -21,11 +21,10 @@
                 If FuncLugarNacimiento.Insertar_LugarNacimiento(tablaLugarNacimiento) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-
-                FuncLugarNacimiento.Mostrar_LugarNacimiento()
 
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -40,7 +39,7 @@
                 If FuncLugarNacimiento.Editar_LugarNacimiento(tablaLugarNacimiento) Then
                     MessageBox.Show("Se ha modificado correctamnete", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
-                    FuncLugarNacimiento.Mostrar_LugarNacimiento()
+                    Me.Dispose()
 
                 Else
                     MessageBox.Show("No fue modifcado intente de nuevo", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -67,10 +66,10 @@
                 If FuncLugarNacimiento.Eliminar_LugarNacimiento(tablaLugarNacimiento) Then
                     MessageBox.Show("producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Limpiar()
+                    Me.Dispose()
                 Else
                     MessageBox.Show("No se ha Registrado el PAgo", "Error registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-                FuncLugarNacimiento.Mostrar_LugarNacimiento()
 
             Catch ex As Exception
                 MsgBox(ex.Message)

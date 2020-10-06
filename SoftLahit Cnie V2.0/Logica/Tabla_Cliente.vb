@@ -10,6 +10,7 @@
     Dim Nombre_padre As String
     Dim Nombre_madre As String
     Dim Estado_civil As String
+    Dim Casado_con As String
     Dim Profesion As String
     Dim Numero_direccion As Integer
     Dim Nombre_calle As String
@@ -211,5 +212,12 @@
         End Set
     End Property
 
-
+    Public Property _Casado_con As String
+        Get
+            Return Casado_con
+        End Get
+        Set(value As String)
+            Casado_con = value
+        End Set
+    End Property
 End Class

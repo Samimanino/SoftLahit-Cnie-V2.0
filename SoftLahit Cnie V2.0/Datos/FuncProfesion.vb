@@ -13,8 +13,6 @@ Public Class FuncProfesion
 
             cmd.Parameters.AddWithValue("@Nombre", Tablaprofesion._Nombre)
 
-
-
             If cmd.ExecuteNonQuery Then
                 Return True
             Else
@@ -40,8 +38,6 @@ Public Class FuncProfesion
             cmd.Parameters.AddWithValue("@ID", Tablaprofesion._ID)
             cmd.Parameters.AddWithValue("@Nombre", Tablaprofesion._Nombre)
 
-
-
             cmd.ExecuteNonQuery()
             Return True
 
@@ -62,8 +58,6 @@ Public Class FuncProfesion
             cmd.Connection = Con
 
             cmd.Parameters.AddWithValue("@ID", Tablaprofesion._ID)
-
-
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -97,6 +91,7 @@ Public Class FuncProfesion
 
             While Drd.Read()
                 frm_Principal.cmb_Profesion.Items.Add(Drd("Nombre").ToString)
+                frm_Principal.cmb_bu_Profesion.Items.Add(Drd("Nombre").ToString)
             End While
 
             Return True
@@ -113,6 +108,7 @@ Public Class FuncProfesion
         End Try
 
     End Function
+
 
     Public Sub Mostrar_profecion()
         Dim adapt As New SqlDataAdapter
