@@ -7,6 +7,7 @@ Public Class Conexion
     Protected dat As New DataTable
     Protected adap As New SqlDataAdapter
     Protected Drd As SqlDataReader
+    Public Event Load(sender As Object, e As EventArgs)
 
     Protected Function Conectar()
         Try

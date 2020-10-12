@@ -32,7 +32,6 @@ Partial Class frm_Principal
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.pb_Validar = New System.Windows.Forms.PictureBox()
-        Me.lbl_Exist = New System.Windows.Forms.Label()
         Me.cmb_nacionalidad = New System.Windows.Forms.ComboBox()
         Me.cmb_lugarNacimiento = New System.Windows.Forms.ComboBox()
         Me.Adresse = New System.Windows.Forms.GroupBox()
@@ -125,7 +124,6 @@ Partial Class frm_Principal
         Me.Panel_alta.Controls.Add(Me.PictureBox3)
         Me.Panel_alta.Controls.Add(Me.PictureBox2)
         Me.Panel_alta.Controls.Add(Me.pb_Validar)
-        Me.Panel_alta.Controls.Add(Me.lbl_Exist)
         Me.Panel_alta.Controls.Add(Me.cmb_nacionalidad)
         Me.Panel_alta.Controls.Add(Me.cmb_lugarNacimiento)
         Me.Panel_alta.Controls.Add(Me.Adresse)
@@ -245,15 +243,6 @@ Partial Class frm_Principal
         Me.pb_Validar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_Validar.TabIndex = 249
         Me.pb_Validar.TabStop = False
-        '
-        'lbl_Exist
-        '
-        Me.lbl_Exist.AutoSize = True
-        Me.lbl_Exist.Location = New System.Drawing.Point(630, 427)
-        Me.lbl_Exist.Name = "lbl_Exist"
-        Me.lbl_Exist.Size = New System.Drawing.Size(25, 13)
-        Me.lbl_Exist.TabIndex = 248
-        Me.lbl_Exist.Text = "000"
         '
         'cmb_nacionalidad
         '
@@ -953,7 +942,6 @@ Partial Class frm_Principal
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents pb_Validar As PictureBox
-    Friend WithEvents lbl_Exist As Label
     Friend WithEvents cmb_nacionalidad As ComboBox
     Friend WithEvents cmb_lugarNacimiento As ComboBox
     Friend WithEvents Adresse As GroupBox

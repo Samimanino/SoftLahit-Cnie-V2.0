@@ -133,20 +133,6 @@ Public Class FuncCliente
         End Try
     End Sub
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Public Function Mostrar_cliente_ID(ByVal tablaCliente As Tabla_Cliente) As Boolean
         Try
             Conectar()
@@ -170,8 +156,7 @@ Public Class FuncCliente
 
 
                 frm_Principal.lbl_id.Text = Drd("id")
-                frm_Principal.lbl_ultima_modi.Text = Drd("Fecha_ulti_modi")
-
+                frm_Principal.lbl_ultima_modi.Text = Drd("Fecha_ulti_modi").ToString()
 
                 frm_Principal.txt_nombre.Text = Drd("Nombre")
                 frm_Principal.txt_Apellido.Text = Drd("Apellido")
@@ -221,8 +206,6 @@ Public Class FuncCliente
         End Try
 
     End Function
-
-
 
     Public Function Editar_cliente(ByVal TablaCliente As Tabla_Cliente) As Boolean
 

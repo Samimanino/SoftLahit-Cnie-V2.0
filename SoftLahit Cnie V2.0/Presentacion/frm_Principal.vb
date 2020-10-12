@@ -1,4 +1,5 @@
-﻿Public Class frm_Principal
+﻿Imports System.Data.SqlClient
+Public Class frm_Principal
 
     Private funcCliente As New FuncCliente
     Private tablaCliente As New Tabla_Cliente
@@ -12,6 +13,8 @@
     Private TipoGenero As String
     Private Status_social As String
 
+    Private BusApellido As String
+    Private BusNombre As String
 
     Private ObjReporte As CrystalReport1
 
@@ -85,14 +88,17 @@
 
     Private Sub txt_cni_TextChanged(sender As Object, e As EventArgs) Handles txt_cni.TextChanged
         txt_cni.CharacterCasing = CharacterCasing.Upper
+
     End Sub
 
     Private Sub txt_passaporte_TextChanged(sender As Object, e As EventArgs) Handles txt_passaporte.TextChanged
         txt_passaporte.CharacterCasing = CharacterCasing.Upper
+
     End Sub
 
     Private Sub txt_permis_TextChanged(sender As Object, e As EventArgs) Handles txt_permis.TextChanged
         txt_permis.CharacterCasing = CharacterCasing.Upper
+
     End Sub
 
     Private Sub dtp_fecha_nacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtp_fecha_nacimiento.ValueChanged
@@ -111,6 +117,41 @@
     Private Sub pb_Validar_Click(sender As Object, e As EventArgs) Handles pb_Validar.Click
 
         If lbl_id.Text = "" Then
+            Dim Con As New SqlConnection
+            Dim cmd As New SqlCommand
+            Dim dat As New DataTable
+            Dim adap As New SqlDataAdapter
+
+            BusNombre = Me.txt_nombre.Text
+            BusApellido = Me.txt_Apellido.Text
+
+            Try
+
+                Con = New SqlConnection(My.Settings.Con)
+                Con.Open()
+
+                adap = New SqlDataAdapter("SELECT * FROM [CNIE_DDBB].[dbo].[Cliente] WHERE nombre like  '%" & BusNombre & "%'  and apellido like '%" & BusApellido & "%'  ", Con)
+                dat = New DataTable
+                adap.Fill(dat)
+            Catch ex As Exception
+                MsgBox(ex.Message, , " Buscar_Cliente_Avanzado ")
+
+                If Con.State = ConnectionState.Open Then
+                    Con.Dispose()
+                End If
+
+            End Try
+            Dim NumeroRegostrosExistentes As Integer
+
+            NumeroRegostrosExistentes = dat.Rows.Count
+
+            If dat.Rows.Count > 0 Then
+                Dim result As DialogResult
+                result = MessageBox.Show("Existe ( " & NumeroRegostrosExistentes & " ) registro con el mismo nombre y apellido.  Desea Ingresarlo ?", "Registro Existente", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If result = DialogResult.No Then
+                    Exit Sub
+                End If
+            End If
 
 
             Try
@@ -142,7 +183,7 @@
                 tablaCliente._Cnie = txt_cni.Text
                 tablaCliente._Num_passaporte = txt_passaporte.Text
                 tablaCliente._Num_permiso_conducir = txt_permis.Text
-                tablaCliente._Fecha_ulti_modi = Today
+                tablaCliente._Fecha_ulti_modi = DateTime.Now
 
 
                 Dim ms As New IO.MemoryStream()
@@ -200,7 +241,7 @@
                 tablaCliente._Cnie = txt_cni.Text
                 tablaCliente._Num_passaporte = txt_passaporte.Text
                 tablaCliente._Num_permiso_conducir = txt_permis.Text
-                tablaCliente._Fecha_ulti_modi = Today
+                tablaCliente._Fecha_ulti_modi = DateTime.Now
 
 
                 Dim ms As New IO.MemoryStream()
@@ -425,4 +466,28 @@
 
     End Sub
 
+    Private Sub txt_cni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_cni.KeyPress
+        If Len(Me.txt_cni.Text) > 10 Then
+            MsgBox("No Se Admiten mas de 10 Caracteres")
+            txt_cni.Text = txt_cni.Text.Substring(0, 10)
+            txt_cni.Select(txt_cni.Text.Length, 0)
+        End If
+
+    End Sub
+
+    Private Sub txt_passaporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_passaporte.KeyPress
+        If Len(Me.txt_passaporte.Text) > 10 Then
+            MsgBox("No Se Admiten mas de 10 Caracteres")
+            txt_passaporte.Text = txt_passaporte.Text.Substring(0, 10)
+            txt_passaporte.Select(txt_passaporte.Text.Length, 0)
+        End If
+    End Sub
+
+    Private Sub txt_permis_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_permis.KeyPress
+        If Len(Me.txt_permis.Text) > 10 Then
+            MsgBox("No Se Admiten mas de 10 Caracteres")
+            txt_permis.Text = txt_permis.Text.Substring(0, 10)
+            txt_permis.Select(txt_permis.Text.Length, 0)
+        End If
+    End Sub
 End Class
