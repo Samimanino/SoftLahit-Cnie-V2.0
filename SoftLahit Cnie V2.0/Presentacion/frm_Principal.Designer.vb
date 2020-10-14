@@ -23,17 +23,31 @@ Partial Class frm_Principal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel_alta = New System.Windows.Forms.Panel()
-        Me.lbl_ultima_modi = New System.Windows.Forms.Label()
-        Me.Lbl_casado_com = New System.Windows.Forms.Label()
-        Me.txt_casado_con = New System.Windows.Forms.TextBox()
-        Me.cmb_Estado_Civil = New System.Windows.Forms.ComboBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.dtp_fecha_nacimiento = New System.Windows.Forms.DateTimePicker()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.pb_Validar = New System.Windows.Forms.PictureBox()
+        Me.lbl_ultima_modi = New System.Windows.Forms.Label()
+        Me.txt_Apellido = New System.Windows.Forms.TextBox()
+        Me.Lbl_casado_com = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.txt_casado_con = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.cmb_Estado_Civil = New System.Windows.Forms.ComboBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.dtp_fecha_nacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_nombre_padre = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.cmb_nacionalidad = New System.Windows.Forms.ComboBox()
+        Me.txt_nombre_madre = New System.Windows.Forms.TextBox()
         Me.cmb_lugarNacimiento = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Adresse = New System.Windows.Forms.GroupBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -45,32 +59,29 @@ Partial Class frm_Principal
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txt_num_direccion = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.cmb_Profesion = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.rb_Genero_m = New System.Windows.Forms.RadioButton()
+        Me.txt_cni = New System.Windows.Forms.TextBox()
         Me.rb_Genero_h = New System.Windows.Forms.RadioButton()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.lbl_id = New System.Windows.Forms.Label()
+        Me.txt_passaporte = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txt_permis = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.txt_passaporte = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.txt_cni = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txt_nombre_madre = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txt_nombre_padre = New System.Windows.Forms.TextBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btn_IngresarHistorialCliente = New System.Windows.Forms.Button()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.cmb_HistorialCliente = New System.Windows.Forms.ComboBox()
+        Me.Txt_HistorialCliente = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.dgv_HistorialCliente = New System.Windows.Forms.DataGridView()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.txt_total_anios = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.txt_Apellido = New System.Windows.Forms.TextBox()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.btn_Nuevo_Cliente = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -98,14 +109,22 @@ Partial Class frm_Principal
         Me.txt_bu_Nombre = New System.Windows.Forms.TextBox()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.dlg = New System.Windows.Forms.OpenFileDialog()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Panel_alta.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Adresse.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_HistorialCliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Imagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_buscar.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,155 +134,280 @@ Partial Class frm_Principal
         '
         'Panel_alta
         '
-        Me.Panel_alta.Controls.Add(Me.lbl_ultima_modi)
-        Me.Panel_alta.Controls.Add(Me.Lbl_casado_com)
-        Me.Panel_alta.Controls.Add(Me.txt_casado_con)
-        Me.Panel_alta.Controls.Add(Me.cmb_Estado_Civil)
-        Me.Panel_alta.Controls.Add(Me.PictureBox6)
-        Me.Panel_alta.Controls.Add(Me.dtp_fecha_nacimiento)
-        Me.Panel_alta.Controls.Add(Me.PictureBox3)
+        Me.Panel_alta.Controls.Add(Me.TabControl1)
         Me.Panel_alta.Controls.Add(Me.PictureBox2)
-        Me.Panel_alta.Controls.Add(Me.pb_Validar)
-        Me.Panel_alta.Controls.Add(Me.cmb_nacionalidad)
-        Me.Panel_alta.Controls.Add(Me.cmb_lugarNacimiento)
-        Me.Panel_alta.Controls.Add(Me.Adresse)
-        Me.Panel_alta.Controls.Add(Me.cmb_Profesion)
-        Me.Panel_alta.Controls.Add(Me.rb_Genero_m)
-        Me.Panel_alta.Controls.Add(Me.rb_Genero_h)
-        Me.Panel_alta.Controls.Add(Me.lbl_id)
-        Me.Panel_alta.Controls.Add(Me.Label16)
-        Me.Panel_alta.Controls.Add(Me.Label13)
-        Me.Panel_alta.Controls.Add(Me.txt_permis)
-        Me.Panel_alta.Controls.Add(Me.Label14)
-        Me.Panel_alta.Controls.Add(Me.txt_passaporte)
-        Me.Panel_alta.Controls.Add(Me.Label15)
-        Me.Panel_alta.Controls.Add(Me.txt_cni)
-        Me.Panel_alta.Controls.Add(Me.Label10)
-        Me.Panel_alta.Controls.Add(Me.Label9)
-        Me.Panel_alta.Controls.Add(Me.Label7)
-        Me.Panel_alta.Controls.Add(Me.txt_nombre_madre)
-        Me.Panel_alta.Controls.Add(Me.Label8)
-        Me.Panel_alta.Controls.Add(Me.txt_nombre_padre)
         Me.Panel_alta.Controls.Add(Me.txt_total_anios)
-        Me.Panel_alta.Controls.Add(Me.Label6)
-        Me.Panel_alta.Controls.Add(Me.Label17)
-        Me.Panel_alta.Controls.Add(Me.Label21)
-        Me.Panel_alta.Controls.Add(Me.Label22)
-        Me.Panel_alta.Controls.Add(Me.Label23)
-        Me.Panel_alta.Controls.Add(Me.txt_nombre)
-        Me.Panel_alta.Controls.Add(Me.Label24)
-        Me.Panel_alta.Controls.Add(Me.txt_Apellido)
         Me.Panel_alta.Location = New System.Drawing.Point(176, 111)
         Me.Panel_alta.Name = "Panel_alta"
         Me.Panel_alta.Size = New System.Drawing.Size(776, 698)
         Me.Panel_alta.TabIndex = 177
         Me.Panel_alta.Visible = False
         '
-        'lbl_ultima_modi
+        'TabControl1
         '
-        Me.lbl_ultima_modi.AutoSize = True
-        Me.lbl_ultima_modi.Location = New System.Drawing.Point(191, 31)
-        Me.lbl_ultima_modi.Name = "lbl_ultima_modi"
-        Me.lbl_ultima_modi.Size = New System.Drawing.Size(0, 13)
-        Me.lbl_ultima_modi.TabIndex = 257
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(745, 671)
+        Me.TabControl1.TabIndex = 261
         '
-        'Lbl_casado_com
+        'TabPage1
         '
-        Me.Lbl_casado_com.AutoSize = True
-        Me.Lbl_casado_com.Location = New System.Drawing.Point(294, 245)
-        Me.Lbl_casado_com.Name = "Lbl_casado_com"
-        Me.Lbl_casado_com.Size = New System.Drawing.Size(65, 13)
-        Me.Lbl_casado_com.TabIndex = 256
-        Me.Lbl_casado_com.Text = "Casado Con"
-        Me.Lbl_casado_com.Visible = False
+        Me.TabPage1.Controls.Add(Me.Label18)
+        Me.TabPage1.Controls.Add(Me.txt_nombre)
+        Me.TabPage1.Controls.Add(Me.pb_Validar)
+        Me.TabPage1.Controls.Add(Me.lbl_ultima_modi)
+        Me.TabPage1.Controls.Add(Me.txt_Apellido)
+        Me.TabPage1.Controls.Add(Me.Lbl_casado_com)
+        Me.TabPage1.Controls.Add(Me.Label24)
+        Me.TabPage1.Controls.Add(Me.txt_casado_con)
+        Me.TabPage1.Controls.Add(Me.Label23)
+        Me.TabPage1.Controls.Add(Me.cmb_Estado_Civil)
+        Me.TabPage1.Controls.Add(Me.Label22)
+        Me.TabPage1.Controls.Add(Me.PictureBox6)
+        Me.TabPage1.Controls.Add(Me.Label21)
+        Me.TabPage1.Controls.Add(Me.dtp_fecha_nacimiento)
+        Me.TabPage1.Controls.Add(Me.Label17)
+        Me.TabPage1.Controls.Add(Me.PictureBox3)
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Controls.Add(Me.txt_nombre_padre)
+        Me.TabPage1.Controls.Add(Me.Label8)
+        Me.TabPage1.Controls.Add(Me.cmb_nacionalidad)
+        Me.TabPage1.Controls.Add(Me.txt_nombre_madre)
+        Me.TabPage1.Controls.Add(Me.cmb_lugarNacimiento)
+        Me.TabPage1.Controls.Add(Me.Label7)
+        Me.TabPage1.Controls.Add(Me.Adresse)
+        Me.TabPage1.Controls.Add(Me.Label9)
+        Me.TabPage1.Controls.Add(Me.cmb_Profesion)
+        Me.TabPage1.Controls.Add(Me.Label10)
+        Me.TabPage1.Controls.Add(Me.rb_Genero_m)
+        Me.TabPage1.Controls.Add(Me.txt_cni)
+        Me.TabPage1.Controls.Add(Me.rb_Genero_h)
+        Me.TabPage1.Controls.Add(Me.Label15)
+        Me.TabPage1.Controls.Add(Me.lbl_id)
+        Me.TabPage1.Controls.Add(Me.txt_passaporte)
+        Me.TabPage1.Controls.Add(Me.Label16)
+        Me.TabPage1.Controls.Add(Me.Label14)
+        Me.TabPage1.Controls.Add(Me.Label13)
+        Me.TabPage1.Controls.Add(Me.txt_permis)
+        Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabPage1.Size = New System.Drawing.Size(737, 645)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Insertar"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'txt_casado_con
+        'Label18
         '
-        Me.txt_casado_con.Location = New System.Drawing.Point(362, 242)
-        Me.txt_casado_con.Name = "txt_casado_con"
-        Me.txt_casado_con.Size = New System.Drawing.Size(261, 20)
-        Me.txt_casado_con.TabIndex = 215
-        Me.txt_casado_con.Visible = False
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(91, 284)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(52, 13)
+        Me.Label18.TabIndex = 258
+        Me.Label18.Text = "Adresse"
         '
-        'cmb_Estado_Civil
+        'txt_nombre
         '
-        Me.cmb_Estado_Civil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_Estado_Civil.FormattingEnabled = True
-        Me.cmb_Estado_Civil.Items.AddRange(New Object() {"Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"})
-        Me.cmb_Estado_Civil.Location = New System.Drawing.Point(162, 242)
-        Me.cmb_Estado_Civil.Name = "cmb_Estado_Civil"
-        Me.cmb_Estado_Civil.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_Estado_Civil.TabIndex = 255
-        Me.cmb_Estado_Civil.Tag = ""
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
-        Me.PictureBox6.Location = New System.Drawing.Point(493, 162)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(25, 22)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 253
-        Me.PictureBox6.TabStop = False
-        '
-        'dtp_fecha_nacimiento
-        '
-        Me.dtp_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_nacimiento.Location = New System.Drawing.Point(163, 162)
-        Me.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento"
-        Me.dtp_fecha_nacimiento.Size = New System.Drawing.Size(120, 20)
-        Me.dtp_fecha_nacimiento.TabIndex = 252
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
-        Me.PictureBox3.Location = New System.Drawing.Point(353, 133)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(25, 22)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 251
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
-        Me.PictureBox2.Location = New System.Drawing.Point(598, 268)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(25, 22)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 250
-        Me.PictureBox2.TabStop = False
+        Me.txt_nombre.Location = New System.Drawing.Point(152, 41)
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.Size = New System.Drawing.Size(460, 20)
+        Me.txt_nombre.TabIndex = 217
         '
         'pb_Validar
         '
         Me.pb_Validar.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.solicit_accept_check_ok_theaction_6340
-        Me.pb_Validar.Location = New System.Drawing.Point(329, 586)
+        Me.pb_Validar.Location = New System.Drawing.Point(319, 527)
         Me.pb_Validar.Name = "pb_Validar"
         Me.pb_Validar.Size = New System.Drawing.Size(49, 45)
         Me.pb_Validar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_Validar.TabIndex = 249
         Me.pb_Validar.TabStop = False
         '
+        'lbl_ultima_modi
+        '
+        Me.lbl_ultima_modi.AutoSize = True
+        Me.lbl_ultima_modi.Location = New System.Drawing.Point(171, 12)
+        Me.lbl_ultima_modi.Name = "lbl_ultima_modi"
+        Me.lbl_ultima_modi.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_ultima_modi.TabIndex = 257
+        '
+        'txt_Apellido
+        '
+        Me.txt_Apellido.Location = New System.Drawing.Point(152, 67)
+        Me.txt_Apellido.Name = "txt_Apellido"
+        Me.txt_Apellido.Size = New System.Drawing.Size(460, 20)
+        Me.txt_Apellido.TabIndex = 218
+        '
+        'Lbl_casado_com
+        '
+        Me.Lbl_casado_com.AutoSize = True
+        Me.Lbl_casado_com.Location = New System.Drawing.Point(282, 227)
+        Me.Lbl_casado_com.Name = "Lbl_casado_com"
+        Me.Lbl_casado_com.Size = New System.Drawing.Size(75, 13)
+        Me.Lbl_casado_com.TabIndex = 256
+        Me.Lbl_casado_com.Text = "Casado Con"
+        Me.Lbl_casado_com.Visible = False
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(94, 43)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(49, 13)
+        Me.Label24.TabIndex = 230
+        Me.Label24.Text = "Prénom"
+        '
+        'txt_casado_con
+        '
+        Me.txt_casado_con.Location = New System.Drawing.Point(350, 223)
+        Me.txt_casado_con.Name = "txt_casado_con"
+        Me.txt_casado_con.Size = New System.Drawing.Size(261, 20)
+        Me.txt_casado_con.TabIndex = 215
+        Me.txt_casado_con.Visible = False
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(111, 69)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(32, 13)
+        Me.Label23.TabIndex = 231
+        Me.Label23.Text = "Nom"
+        '
+        'cmb_Estado_Civil
+        '
+        Me.cmb_Estado_Civil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_Estado_Civil.FormattingEnabled = True
+        Me.cmb_Estado_Civil.Items.AddRange(New Object() {"Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"})
+        Me.cmb_Estado_Civil.Location = New System.Drawing.Point(150, 223)
+        Me.cmb_Estado_Civil.Name = "cmb_Estado_Civil"
+        Me.cmb_Estado_Civil.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_Estado_Civil.TabIndex = 255
+        Me.cmb_Estado_Civil.Tag = ""
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(108, 94)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(35, 13)
+        Me.Label22.TabIndex = 232
+        Me.Label22.Text = "Sexe"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox6.Location = New System.Drawing.Point(480, 143)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 253
+        Me.PictureBox6.TabStop = False
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(75, 120)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(68, 13)
+        Me.Label21.TabIndex = 233
+        Me.Label21.Text = "Nationalité"
+        '
+        'dtp_fecha_nacimiento
+        '
+        Me.dtp_fecha_nacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_fecha_nacimiento.Location = New System.Drawing.Point(150, 143)
+        Me.dtp_fecha_nacimiento.Name = "dtp_fecha_nacimiento"
+        Me.dtp_fecha_nacimiento.Size = New System.Drawing.Size(120, 20)
+        Me.dtp_fecha_nacimiento.TabIndex = 252
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(28, 146)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(115, 13)
+        Me.Label17.TabIndex = 234
+        Me.Label17.Text = "Date de Nassaince"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox3.Location = New System.Drawing.Point(341, 115)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 251
+        Me.PictureBox3.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(288, 146)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(15, 13)
+        Me.Label6.TabIndex = 235
+        Me.Label6.Text = "A"
+        '
+        'txt_nombre_padre
+        '
+        Me.txt_nombre_padre.Location = New System.Drawing.Point(150, 169)
+        Me.txt_nombre_padre.Name = "txt_nombre_padre"
+        Me.txt_nombre_padre.Size = New System.Drawing.Size(460, 20)
+        Me.txt_nombre_padre.TabIndex = 222
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(63, 172)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(80, 13)
+        Me.Label8.TabIndex = 237
+        Me.Label8.Text = "Nom du Pére"
+        '
         'cmb_nacionalidad
         '
         Me.cmb_nacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_nacionalidad.FormattingEnabled = True
         Me.cmb_nacionalidad.Items.AddRange(New Object() {"No Saber"})
-        Me.cmb_nacionalidad.Location = New System.Drawing.Point(163, 134)
+        Me.cmb_nacionalidad.Location = New System.Drawing.Point(150, 115)
         Me.cmb_nacionalidad.Name = "cmb_nacionalidad"
         Me.cmb_nacionalidad.Size = New System.Drawing.Size(184, 21)
         Me.cmb_nacionalidad.TabIndex = 220
         Me.cmb_nacionalidad.Tag = ""
         '
+        'txt_nombre_madre
+        '
+        Me.txt_nombre_madre.Location = New System.Drawing.Point(150, 195)
+        Me.txt_nombre_madre.Name = "txt_nombre_madre"
+        Me.txt_nombre_madre.Size = New System.Drawing.Size(460, 20)
+        Me.txt_nombre_madre.TabIndex = 223
+        '
         'cmb_lugarNacimiento
         '
         Me.cmb_lugarNacimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_lugarNacimiento.FormattingEnabled = True
-        Me.cmb_lugarNacimiento.Location = New System.Drawing.Point(337, 162)
+        Me.cmb_lugarNacimiento.Location = New System.Drawing.Point(324, 143)
         Me.cmb_lugarNacimiento.Name = "cmb_lugarNacimiento"
         Me.cmb_lugarNacimiento.Size = New System.Drawing.Size(151, 21)
         Me.cmb_lugarNacimiento.TabIndex = 221
         Me.cmb_lugarNacimiento.Tag = ""
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(61, 198)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(82, 13)
+        Me.Label7.TabIndex = 238
+        Me.Label7.Text = "Nom du Mére"
         '
         'Adresse
         '
@@ -277,12 +421,11 @@ Partial Class frm_Principal
         Me.Adresse.Controls.Add(Me.Label20)
         Me.Adresse.Controls.Add(Me.txt_num_direccion)
         Me.Adresse.Controls.Add(Me.Label19)
-        Me.Adresse.Location = New System.Drawing.Point(162, 296)
+        Me.Adresse.Location = New System.Drawing.Point(150, 277)
         Me.Adresse.Name = "Adresse"
         Me.Adresse.Size = New System.Drawing.Size(464, 122)
         Me.Adresse.TabIndex = 226
         Me.Adresse.TabStop = False
-        Me.Adresse.Text = "Adresse"
         '
         'PictureBox5
         '
@@ -329,7 +472,7 @@ Partial Class frm_Principal
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(8, 81)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(34, 13)
+        Me.Label12.Size = New System.Drawing.Size(40, 13)
         Me.Label12.TabIndex = 149
         Me.Label12.Text = "Barrio"
         '
@@ -338,7 +481,7 @@ Partial Class frm_Principal
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(6, 41)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(19, 13)
+        Me.Label11.Size = New System.Drawing.Size(21, 13)
         Me.Label11.TabIndex = 148
         Me.Label11.Text = "Nº"
         '
@@ -354,7 +497,7 @@ Partial Class frm_Principal
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(228, 81)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(40, 13)
+        Me.Label20.Size = New System.Drawing.Size(46, 13)
         Me.Label20.TabIndex = 146
         Me.Label20.Text = "Ciudad"
         '
@@ -364,164 +507,228 @@ Partial Class frm_Principal
         Me.txt_num_direccion.Name = "txt_num_direccion"
         Me.txt_num_direccion.Size = New System.Drawing.Size(46, 20)
         Me.txt_num_direccion.TabIndex = 11
-        Me.txt_num_direccion.Text = "0"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(113, 40)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(27, 13)
+        Me.Label19.Size = New System.Drawing.Size(30, 13)
         Me.Label19.TabIndex = 143
         Me.Label19.Text = "Rue"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(36, 227)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(107, 13)
+        Me.Label9.TabIndex = 239
+        Me.Label9.Text = "Situation familiale"
         '
         'cmb_Profesion
         '
         Me.cmb_Profesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_Profesion.FormattingEnabled = True
-        Me.cmb_Profesion.Location = New System.Drawing.Point(162, 269)
+        Me.cmb_Profesion.Location = New System.Drawing.Point(150, 250)
         Me.cmb_Profesion.Name = "cmb_Profesion"
         Me.cmb_Profesion.Size = New System.Drawing.Size(430, 21)
         Me.cmb_Profesion.TabIndex = 225
         Me.cmb_Profesion.Tag = ""
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(77, 254)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(66, 13)
+        Me.Label10.TabIndex = 240
+        Me.Label10.Text = "Profession"
+        '
         'rb_Genero_m
         '
         Me.rb_Genero_m.AutoSize = True
-        Me.rb_Genero_m.Location = New System.Drawing.Point(259, 111)
+        Me.rb_Genero_m.Location = New System.Drawing.Point(246, 93)
         Me.rb_Genero_m.Name = "rb_Genero_m"
-        Me.rb_Genero_m.Size = New System.Drawing.Size(71, 17)
+        Me.rb_Genero_m.Size = New System.Drawing.Size(79, 17)
         Me.rb_Genero_m.TabIndex = 246
         Me.rb_Genero_m.TabStop = True
         Me.rb_Genero_m.Text = "Femenino"
         Me.rb_Genero_m.UseVisualStyleBackColor = True
         '
+        'txt_cni
+        '
+        Me.txt_cni.Location = New System.Drawing.Point(150, 405)
+        Me.txt_cni.Name = "txt_cni"
+        Me.txt_cni.Size = New System.Drawing.Size(462, 20)
+        Me.txt_cni.TabIndex = 227
+        '
         'rb_Genero_h
         '
         Me.rb_Genero_h.AutoSize = True
         Me.rb_Genero_h.Checked = True
-        Me.rb_Genero_h.Location = New System.Drawing.Point(163, 111)
+        Me.rb_Genero_h.Location = New System.Drawing.Point(150, 93)
         Me.rb_Genero_h.Name = "rb_Genero_h"
-        Me.rb_Genero_h.Size = New System.Drawing.Size(73, 17)
+        Me.rb_Genero_h.Size = New System.Drawing.Size(82, 17)
         Me.rb_Genero_h.TabIndex = 219
         Me.rb_Genero_h.TabStop = True
         Me.rb_Genero_h.Text = "Masculino"
         Me.rb_Genero_h.UseVisualStyleBackColor = True
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(115, 409)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(28, 13)
+        Me.Label15.TabIndex = 241
+        Me.Label15.Text = "CNI"
+        '
         'lbl_id
         '
         Me.lbl_id.AutoSize = True
-        Me.lbl_id.Location = New System.Drawing.Point(161, 31)
+        Me.lbl_id.Location = New System.Drawing.Point(149, 12)
         Me.lbl_id.Name = "lbl_id"
         Me.lbl_id.Size = New System.Drawing.Size(0, 13)
         Me.lbl_id.TabIndex = 245
         '
+        'txt_passaporte
+        '
+        Me.txt_passaporte.Location = New System.Drawing.Point(150, 431)
+        Me.txt_passaporte.Name = "txt_passaporte"
+        Me.txt_passaporte.Size = New System.Drawing.Size(462, 20)
+        Me.txt_passaporte.TabIndex = 228
+        '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(103, 31)
+        Me.Label16.Location = New System.Drawing.Point(79, 12)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(54, 13)
+        Me.Label16.Size = New System.Drawing.Size(64, 13)
         Me.Label16.TabIndex = 244
         Me.Label16.Text = "Fiche Nª :"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(71, 435)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(72, 13)
+        Me.Label14.TabIndex = 242
+        Me.Label14.Text = "Passport nª"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(60, 479)
+        Me.Label13.Location = New System.Drawing.Point(28, 461)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(97, 13)
+        Me.Label13.Size = New System.Drawing.Size(115, 13)
         Me.Label13.TabIndex = 243
         Me.Label13.Text = "Permis de conduire"
         '
         'txt_permis
         '
-        Me.txt_permis.Location = New System.Drawing.Point(162, 476)
+        Me.txt_permis.Location = New System.Drawing.Point(150, 457)
         Me.txt_permis.Name = "txt_permis"
         Me.txt_permis.Size = New System.Drawing.Size(462, 20)
         Me.txt_permis.TabIndex = 229
         '
-        'Label14
+        'TabPage2
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(96, 453)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(61, 13)
-        Me.Label14.TabIndex = 242
-        Me.Label14.Text = "Passport nª"
+        Me.TabPage2.Controls.Add(Me.btn_IngresarHistorialCliente)
+        Me.TabPage2.Controls.Add(Me.Label29)
+        Me.TabPage2.Controls.Add(Me.PictureBox8)
+        Me.TabPage2.Controls.Add(Me.cmb_HistorialCliente)
+        Me.TabPage2.Controls.Add(Me.Txt_HistorialCliente)
+        Me.TabPage2.Controls.Add(Me.Label28)
+        Me.TabPage2.Controls.Add(Me.dgv_HistorialCliente)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabPage2.Size = New System.Drawing.Size(737, 645)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Historial"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'txt_passaporte
+        'btn_IngresarHistorialCliente
         '
-        Me.txt_passaporte.Location = New System.Drawing.Point(162, 450)
-        Me.txt_passaporte.Name = "txt_passaporte"
-        Me.txt_passaporte.Size = New System.Drawing.Size(462, 20)
-        Me.txt_passaporte.TabIndex = 228
+        Me.btn_IngresarHistorialCliente.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_IngresarHistorialCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_IngresarHistorialCliente.ForeColor = System.Drawing.Color.Black
+        Me.btn_IngresarHistorialCliente.Location = New System.Drawing.Point(99, 37)
+        Me.btn_IngresarHistorialCliente.Name = "btn_IngresarHistorialCliente"
+        Me.btn_IngresarHistorialCliente.Size = New System.Drawing.Size(175, 38)
+        Me.btn_IngresarHistorialCliente.TabIndex = 264
+        Me.btn_IngresarHistorialCliente.Text = "CASIER"
+        Me.btn_IngresarHistorialCliente.UseVisualStyleBackColor = False
         '
-        'Label15
+        'Label29
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(132, 427)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(25, 13)
-        Me.Label15.TabIndex = 241
-        Me.Label15.Text = "CNI"
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(36, 84)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(57, 13)
+        Me.Label29.TabIndex = 262
+        Me.Label29.Text = "Nationalité"
         '
-        'txt_cni
+        'PictureBox8
         '
-        Me.txt_cni.Location = New System.Drawing.Point(162, 424)
-        Me.txt_cni.Name = "txt_cni"
-        Me.txt_cni.Size = New System.Drawing.Size(462, 20)
-        Me.txt_cni.TabIndex = 227
+        Me.PictureBox8.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox8.Location = New System.Drawing.Point(632, 81)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 263
+        Me.PictureBox8.TabStop = False
         '
-        'Label10
+        'cmb_HistorialCliente
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(106, 272)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(51, 13)
-        Me.Label10.TabIndex = 240
-        Me.Label10.Text = "Profesion"
+        Me.cmb_HistorialCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_HistorialCliente.FormattingEnabled = True
+        Me.cmb_HistorialCliente.Items.AddRange(New Object() {"No Saber"})
+        Me.cmb_HistorialCliente.Location = New System.Drawing.Point(99, 81)
+        Me.cmb_HistorialCliente.Name = "cmb_HistorialCliente"
+        Me.cmb_HistorialCliente.Size = New System.Drawing.Size(531, 21)
+        Me.cmb_HistorialCliente.TabIndex = 261
+        Me.cmb_HistorialCliente.Tag = ""
         '
-        'Label9
+        'Txt_HistorialCliente
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(69, 245)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(88, 13)
-        Me.Label9.TabIndex = 239
-        Me.Label9.Text = "Situation familiale"
+        Me.Txt_HistorialCliente.Location = New System.Drawing.Point(99, 108)
+        Me.Txt_HistorialCliente.Multiline = True
+        Me.Txt_HistorialCliente.Name = "Txt_HistorialCliente"
+        Me.Txt_HistorialCliente.Size = New System.Drawing.Size(558, 171)
+        Me.Txt_HistorialCliente.TabIndex = 254
         '
-        'Label7
+        'Label28
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(86, 217)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 13)
-        Me.Label7.TabIndex = 238
-        Me.Label7.Text = "Nom du Mére"
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(63, 110)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(29, 13)
+        Me.Label28.TabIndex = 260
+        Me.Label28.Text = "Nom"
         '
-        'txt_nombre_madre
+        'dgv_HistorialCliente
         '
-        Me.txt_nombre_madre.Location = New System.Drawing.Point(163, 214)
-        Me.txt_nombre_madre.Name = "txt_nombre_madre"
-        Me.txt_nombre_madre.Size = New System.Drawing.Size(460, 20)
-        Me.txt_nombre_madre.TabIndex = 223
+        Me.dgv_HistorialCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_HistorialCliente.Location = New System.Drawing.Point(4, 288)
+        Me.dgv_HistorialCliente.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_HistorialCliente.Name = "dgv_HistorialCliente"
+        Me.dgv_HistorialCliente.RowTemplate.Height = 24
+        Me.dgv_HistorialCliente.Size = New System.Drawing.Size(729, 353)
+        Me.dgv_HistorialCliente.TabIndex = 0
         '
-        'Label8
+        'PictureBox2
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(88, 191)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(69, 13)
-        Me.Label8.TabIndex = 237
-        Me.Label8.Text = "Nom du Pére"
-        '
-        'txt_nombre_padre
-        '
-        Me.txt_nombre_padre.Location = New System.Drawing.Point(163, 188)
-        Me.txt_nombre_padre.Name = "txt_nombre_padre"
-        Me.txt_nombre_padre.Size = New System.Drawing.Size(460, 20)
-        Me.txt_nombre_padre.TabIndex = 222
+        Me.PictureBox2.Image = Global.SoftLahit_Cnie_V2._0.My.Resources.Resources.sign_add_icon_34367___copia
+        Me.PictureBox2.Location = New System.Drawing.Point(598, 268)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 22)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 250
+        Me.PictureBox2.TabStop = False
         '
         'txt_total_anios
         '
@@ -530,74 +737,6 @@ Partial Class frm_Principal
         Me.txt_total_anios.Name = "txt_total_anios"
         Me.txt_total_anios.Size = New System.Drawing.Size(102, 20)
         Me.txt_total_anios.TabIndex = 236
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(300, 165)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(14, 13)
-        Me.Label6.TabIndex = 235
-        Me.Label6.Text = "A"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(59, 165)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(98, 13)
-        Me.Label17.TabIndex = 234
-        Me.Label17.Text = "Date de Nassaince"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(100, 139)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(57, 13)
-        Me.Label21.TabIndex = 233
-        Me.Label21.Text = "Nationalite"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(126, 113)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(31, 13)
-        Me.Label22.TabIndex = 232
-        Me.Label22.Text = "Sexe"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(128, 88)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(29, 13)
-        Me.Label23.TabIndex = 231
-        Me.Label23.Text = "Nom"
-        '
-        'txt_nombre
-        '
-        Me.txt_nombre.Location = New System.Drawing.Point(164, 59)
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(460, 20)
-        Me.txt_nombre.TabIndex = 217
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(114, 62)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(43, 13)
-        Me.Label24.TabIndex = 230
-        Me.Label24.Text = "Prenom"
-        '
-        'txt_Apellido
-        '
-        Me.txt_Apellido.Location = New System.Drawing.Point(164, 85)
-        Me.txt_Apellido.Name = "txt_Apellido"
-        Me.txt_Apellido.Size = New System.Drawing.Size(460, 20)
-        Me.txt_Apellido.TabIndex = 218
         '
         'btn_buscar
         '
@@ -608,7 +747,7 @@ Partial Class frm_Principal
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(134, 33)
         Me.btn_buscar.TabIndex = 184
-        Me.btn_buscar.Text = "Rechercher"
+        Me.btn_buscar.Text = "&Rechercher"
         Me.btn_buscar.UseVisualStyleBackColor = False
         '
         'btn_Nuevo_Cliente
@@ -620,15 +759,15 @@ Partial Class frm_Principal
         Me.btn_Nuevo_Cliente.Name = "btn_Nuevo_Cliente"
         Me.btn_Nuevo_Cliente.Size = New System.Drawing.Size(134, 33)
         Me.btn_Nuevo_Cliente.TabIndex = 183
-        Me.btn_Nuevo_Cliente.Text = "Nouvelle Fiche"
+        Me.btn_Nuevo_Cliente.Text = "&Nouvelle Fiche"
         Me.btn_Nuevo_Cliente.UseVisualStyleBackColor = False
         '
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button4.Location = New System.Drawing.Point(967, 520)
+        Me.Button4.ForeColor = System.Drawing.Color.Black
+        Me.Button4.Location = New System.Drawing.Point(967, 532)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(225, 38)
         Me.Button4.TabIndex = 182
@@ -640,7 +779,7 @@ Partial Class frm_Principal
         '
         Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button3.ForeColor = System.Drawing.Color.Black
         Me.Button3.Location = New System.Drawing.Point(967, 470)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(225, 38)
@@ -653,7 +792,7 @@ Partial Class frm_Principal
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.ForeColor = System.Drawing.Color.Black
         Me.Button2.Location = New System.Drawing.Point(967, 414)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(225, 38)
@@ -666,7 +805,7 @@ Partial Class frm_Principal
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.ForeColor = System.Drawing.Color.Black
         Me.Button1.Location = New System.Drawing.Point(967, 363)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(225, 38)
@@ -882,11 +1021,11 @@ Partial Class frm_Principal
         Me.btn_eliminar.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_eliminar.ForeColor = System.Drawing.Color.Red
-        Me.btn_eliminar.Location = New System.Drawing.Point(967, 671)
+        Me.btn_eliminar.Location = New System.Drawing.Point(967, 752)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(225, 38)
         Me.btn_eliminar.TabIndex = 186
-        Me.btn_eliminar.Text = "Eliminar"
+        Me.btn_eliminar.Text = "&Supprimer"
         Me.btn_eliminar.UseVisualStyleBackColor = False
         Me.btn_eliminar.Visible = False
         '
@@ -894,11 +1033,35 @@ Partial Class frm_Principal
         '
         Me.dlg.FileName = "OpenFileDialog1"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(473, 50)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(50, 20)
+        Me.TextBox1.TabIndex = 258
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(529, 50)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(50, 20)
+        Me.TextBox2.TabIndex = 259
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(585, 50)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(50, 20)
+        Me.TextBox3.TabIndex = 260
+        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1328, 833)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.Panel_alta)
         Me.Controls.Add(Me.btn_buscar)
@@ -913,14 +1076,21 @@ Partial Class frm_Principal
         Me.Text = "Form2"
         Me.Panel_alta.ResumeLayout(False)
         Me.Panel_alta.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pb_Validar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Adresse.ResumeLayout(False)
         Me.Adresse.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_HistorialCliente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Imagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_buscar.ResumeLayout(False)
         Me.Panel_buscar.PerformLayout()
@@ -1008,4 +1178,18 @@ Partial Class frm_Principal
     Friend WithEvents txt_bu_Nombre As TextBox
     Friend WithEvents btn_eliminar As Button
     Friend WithEvents dlg As OpenFileDialog
+    Friend WithEvents Label18 As Label
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents Txt_HistorialCliente As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents dgv_HistorialCliente As DataGridView
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label29 As Label
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents cmb_HistorialCliente As ComboBox
+    Friend WithEvents btn_IngresarHistorialCliente As Button
 End Class

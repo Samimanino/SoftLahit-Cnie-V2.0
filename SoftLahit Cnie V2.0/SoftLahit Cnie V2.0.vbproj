@@ -118,9 +118,11 @@
     <Compile Include="Datos\FuncBarrio.vb" />
     <Compile Include="Datos\FuncCiudad.vb" />
     <Compile Include="Datos\FuncCliente.vb" />
+    <Compile Include="Datos\FuncHistorialCliente.vb" />
     <Compile Include="Datos\FuncLugarNacimiento.vb" />
     <Compile Include="Datos\FuncNacionalidad.vb" />
     <Compile Include="Datos\FuncProfesion.vb" />
+    <Compile Include="Logica\Tabla_HistorialCliente.vb" />
     <Compile Include="Presentacion\frm_Principal.Designer.vb">
       <DependentUpon>frm_Principal.vb</DependentUpon>
     </Compile>

@@ -3,12 +3,16 @@ Public Class frm_Principal
 
     Private funcCliente As New FuncCliente
     Private tablaCliente As New Tabla_Cliente
+    Private tablaHistorialCliente As New Tabla_HistorialCliente
+
+
 
     Private FuncProfesion As New FuncProfesion
     Private FuncNacionalidad As New FuncNacionalidad
     Private FuncBarrio As New FuncBarrio
     Private FuncCiudad As New FuncCiudad
     Private FuncLugarNacimiento As New FuncLugarNacimiento
+    Private FuncHistorialCliente As New FuncHistorialCliente
 
     Private TipoGenero As String
     Private Status_social As String
@@ -71,6 +75,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub txt_num_direccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_num_direccion.KeyPress
+
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -80,6 +85,7 @@ Public Class frm_Principal
         Else
             e.Handled = True
         End If
+
     End Sub
 
     Private Sub txt_nombre_calle_TextChanged(sender As Object, e As EventArgs) Handles txt_nombre_calle.TextChanged
@@ -144,10 +150,10 @@ Public Class frm_Principal
             Dim NumeroRegostrosExistentes As Integer
 
             NumeroRegostrosExistentes = dat.Rows.Count
-
+            '    5 enregistrements avec le même nom et prénom
             If dat.Rows.Count > 0 Then
                 Dim result As DialogResult
-                result = MessageBox.Show("Existe ( " & NumeroRegostrosExistentes & " ) registro con el mismo nombre y apellido.  Desea Ingresarlo ?", "Registro Existente", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                result = MessageBox.Show("Il y a ( " & NumeroRegostrosExistentes & " ) enregistrements avec le même nom et prénom. Vous souhaitez l'enregistrer ?", "Enregistrement existant", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If result = DialogResult.No Then
                     Exit Sub
                 End If
@@ -196,8 +202,17 @@ Public Class frm_Principal
                 tablaCliente._Imagen = ms.GetBuffer
 
                 If funcCliente.Insertar_cliente(tablaCliente) Then
-                    MessageBox.Show("Producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    Limpiar()
+                    'MessageBox.Show("Producto registrado correctamente", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    '  Limpiar()
+
+
+                    Button1.Visible = True
+                    Button2.Visible = True
+                    Button3.Visible = True
+                    Button4.Visible = True
+                    btn_eliminar.Visible = True
+
+
                 Else
                     MessageBox.Show("Producto no fue registrado intente de nuevo", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -232,10 +247,11 @@ Public Class frm_Principal
                 tablaCliente._Estado_civil = cmb_Estado_Civil.Text
                 tablaCliente._Casado_con = txt_casado_con.Text
                 tablaCliente._Profesion = cmb_Profesion.Text
-                If txt_num_direccion.Text <> "" Then
-                    tablaCliente._Numero_direccion = txt_num_direccion.Text
-                End If
-                tablaCliente._Nombre_calle = txt_nombre_calle.Text
+
+                tablaCliente._Numero_direccion = txt_num_direccion.Text
+
+                    tablaCliente._Nombre_calle = txt_nombre_calle.Text
+
                 tablaCliente._Barrio = cmb_barrio.Text
                 tablaCliente._Ciudad = Cmb_Ciudad.Text
                 tablaCliente._Cnie = txt_cni.Text
@@ -293,11 +309,12 @@ Public Class frm_Principal
         Panel_buscar.Visible = False
         Panel_alta.Visible = True
         Imagen.Visible = True
-        Button1.Visible = True
-        Button2.Visible = True
-        Button3.Visible = True
-        Button4.Visible = True
-        btn_eliminar.Visible = True
+
+        Button1.Visible = False
+        Button2.Visible = False
+        Button3.Visible = False
+        Button4.Visible = False
+        btn_eliminar.Visible = False
 
 
     End Sub
@@ -391,6 +408,7 @@ Public Class frm_Principal
 
             tablaCliente._ID = valor
             funcCliente.Mostrar_cliente_ID(tablaCliente)
+            FuncHistorialCliente.Mostrar_HistorialCliente()
 
             Panel_buscar.Visible = False
             Panel_alta.Visible = True
@@ -450,10 +468,6 @@ Public Class frm_Principal
 
     End Sub
 
-    Private Sub dgv_buscar_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_buscar.CellContentClick
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         Dim objReport As New CrystalReport1
@@ -490,4 +504,29 @@ Public Class frm_Principal
             txt_permis.Select(txt_permis.Text.Length, 0)
         End If
     End Sub
+
+    Private Sub btn_IngresarHistorialCliente_Click(sender As Object, e As EventArgs) Handles btn_IngresarHistorialCliente.Click
+
+        Try
+            tablaHistorialCliente._ID_Cliente = lbl_id.Text
+            tablaHistorialCliente._TipoPerdida = cmb_HistorialCliente.Text
+            tablaHistorialCliente._Observacion = Txt_HistorialCliente.Text
+            tablaHistorialCliente._Fecha_alta = DateTime.Now
+            tablaHistorialCliente._Fecha_modi = DateTime.Now
+
+            If FuncHistorialCliente.Insertar_HistorialCliente(tablaHistorialCliente) Then
+                MessageBox.Show("Producto OK ", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                FuncHistorialCliente.Mostrar_HistorialCliente()
+            Else
+                MessageBox.Show("Producto no fue registrado intente de nuevo", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+    End Sub
+
 End Class
