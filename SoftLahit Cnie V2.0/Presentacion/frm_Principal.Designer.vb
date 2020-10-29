@@ -76,7 +76,7 @@ Partial Class frm_Principal
         Me.btn_IngresarHistorialCliente = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.cmb_HistorialCliente = New System.Windows.Forms.ComboBox()
+        Me.cmb_TipoPerdida = New System.Windows.Forms.ComboBox()
         Me.Txt_HistorialCliente = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.dgv_HistorialCliente = New System.Windows.Forms.DataGridView()
@@ -638,7 +638,7 @@ Partial Class frm_Principal
         Me.TabPage2.Controls.Add(Me.btn_IngresarHistorialCliente)
         Me.TabPage2.Controls.Add(Me.Label29)
         Me.TabPage2.Controls.Add(Me.PictureBox8)
-        Me.TabPage2.Controls.Add(Me.cmb_HistorialCliente)
+        Me.TabPage2.Controls.Add(Me.cmb_TipoPerdida)
         Me.TabPage2.Controls.Add(Me.Txt_HistorialCliente)
         Me.TabPage2.Controls.Add(Me.Label28)
         Me.TabPage2.Controls.Add(Me.dgv_HistorialCliente)
@@ -682,16 +682,16 @@ Partial Class frm_Principal
         Me.PictureBox8.TabIndex = 263
         Me.PictureBox8.TabStop = False
         '
-        'cmb_HistorialCliente
+        'cmb_TipoPerdida
         '
-        Me.cmb_HistorialCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_HistorialCliente.FormattingEnabled = True
-        Me.cmb_HistorialCliente.Items.AddRange(New Object() {"No Saber"})
-        Me.cmb_HistorialCliente.Location = New System.Drawing.Point(99, 81)
-        Me.cmb_HistorialCliente.Name = "cmb_HistorialCliente"
-        Me.cmb_HistorialCliente.Size = New System.Drawing.Size(531, 21)
-        Me.cmb_HistorialCliente.TabIndex = 261
-        Me.cmb_HistorialCliente.Tag = ""
+        Me.cmb_TipoPerdida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_TipoPerdida.FormattingEnabled = True
+        Me.cmb_TipoPerdida.Items.AddRange(New Object() {"No Saber"})
+        Me.cmb_TipoPerdida.Location = New System.Drawing.Point(99, 81)
+        Me.cmb_TipoPerdida.Name = "cmb_TipoPerdida"
+        Me.cmb_TipoPerdida.Size = New System.Drawing.Size(531, 21)
+        Me.cmb_TipoPerdida.TabIndex = 261
+        Me.cmb_TipoPerdida.Tag = ""
         '
         'Txt_HistorialCliente
         '
@@ -1190,6 +1190,6 @@ Partial Class frm_Principal
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label29 As Label
     Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents cmb_HistorialCliente As ComboBox
+    Friend WithEvents cmb_TipoPerdida As ComboBox
     Friend WithEvents btn_IngresarHistorialCliente As Button
 End Class

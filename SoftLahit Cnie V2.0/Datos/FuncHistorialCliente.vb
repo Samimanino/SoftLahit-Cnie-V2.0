@@ -109,7 +109,7 @@ Public Class FuncHistorialCliente
 
 
 
-    Public Function Mostrar_cmb_Ciudad()
+    Public Function Mostrar_cmb_HistorialCliente()
         Try
             frm_Principal.Cmb_Ciudad.Items.Clear()
 

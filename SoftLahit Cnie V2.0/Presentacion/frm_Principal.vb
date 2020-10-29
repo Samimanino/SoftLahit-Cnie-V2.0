@@ -33,6 +33,7 @@ Public Class frm_Principal
         FuncNacionalidad.Mostrar_cmb_Nacionalidad()
         FuncCiudad.Mostrar_cmb_Ciudad()
         FuncLugarNacimiento.Mostrar_cmb_LugarNacimiento()
+        FuncHistorialCliente.Mostrar_cmb_HistorialCliente()
 
     End Sub
 
@@ -250,7 +251,7 @@ Public Class frm_Principal
 
                 tablaCliente._Numero_direccion = txt_num_direccion.Text
 
-                    tablaCliente._Nombre_calle = txt_nombre_calle.Text
+                tablaCliente._Nombre_calle = txt_nombre_calle.Text
 
                 tablaCliente._Barrio = cmb_barrio.Text
                 tablaCliente._Ciudad = Cmb_Ciudad.Text
@@ -509,7 +510,7 @@ Public Class frm_Principal
 
         Try
             tablaHistorialCliente._ID_Cliente = lbl_id.Text
-            tablaHistorialCliente._TipoPerdida = cmb_HistorialCliente.Text
+            tablaHistorialCliente._TipoPerdida = cmb_TipoPerdida.Text
             tablaHistorialCliente._Observacion = Txt_HistorialCliente.Text
             tablaHistorialCliente._Fecha_alta = DateTime.Now
             tablaHistorialCliente._Fecha_modi = DateTime.Now
@@ -527,6 +528,10 @@ Public Class frm_Principal
         End Try
 
 
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
+        frm_TipoPerdida.ShowDialog()
     End Sub
 
 End Class

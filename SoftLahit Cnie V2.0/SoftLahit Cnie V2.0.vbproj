@@ -122,7 +122,9 @@
     <Compile Include="Datos\FuncLugarNacimiento.vb" />
     <Compile Include="Datos\FuncNacionalidad.vb" />
     <Compile Include="Datos\FuncProfesion.vb" />
+    <Compile Include="Datos\FuncTipoPerdida.vb" />
     <Compile Include="Logica\Tabla_HistorialCliente.vb" />
+    <Compile Include="Logica\Tabla_TipoPerdida.vb" />
     <Compile Include="Presentacion\frm_Principal.Designer.vb">
       <DependentUpon>frm_Principal.vb</DependentUpon>
     </Compile>
@@ -181,6 +183,12 @@
     <Compile Include="Presentacion\frm_Profesion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_TipoPerdida.Designer.vb">
+      <DependentUpon>frm_TipoPerdida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_TipoPerdida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report\CrystalReport2.vb">
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -226,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Profesion.resx">
       <DependentUpon>frm_Profesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_TipoPerdida.resx">
+      <DependentUpon>frm_TipoPerdida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
